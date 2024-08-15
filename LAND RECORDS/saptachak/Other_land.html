@@ -1,0 +1,777 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Bihar Bhumi
+</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font: 12pt "Tahoma";
+        }
+
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .page {
+            /*            width: 21cm;
+            min-height: 29.7cm;*/
+            /*padding: 2cm;*/
+            width: 29.7cm;
+            min-height: 21cm;
+            margin: 1cm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .subpage {
+            padding: 1cm;
+            border: 5px red solid;
+            height: 237mm;
+            outline: 2cm #FFEAEA solid;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        .divMain {
+            margin: 0px;
+            padding-top: 20px;
+        }
+
+        .divHeader {
+            margin: 0 auto;
+            padding: 0;
+            width: 1000px;
+        }
+
+        #divData {
+            margin: 0 auto;
+            padding: 0;
+            width: 1000px;
+        }
+
+        .divBlank {
+            margin: 0 auto;
+            padding: 0;
+            width: 1000px;
+            height: 20px;
+        }
+
+        .divTopRowData {
+            margin: 0 auto;
+            height: 25px;
+            padding: 0;
+            width: 1000px;
+            border-top: solid 1px black;
+            border-left: solid 1px black;
+            border-right: solid 1px black;
+        }
+
+        .divRowData {
+            margin: 0 auto;
+            padding: 0;
+            width: 1000px;
+            border-top: solid 1px black;
+            border-left: solid 1px black;
+            border-right: solid 1px black;
+        }
+
+        .divAfterGrid {
+            margin: 0 auto;
+            padding: 0;
+            width: 1000px;
+        }
+
+        .tblTopRowData {
+            width: 100%;
+            padding-left: 10px;
+            padding-top: 0px;
+            vertical-align: top;
+            font-size: medium;
+            font-family: Arial;
+        }
+
+        .tblData {
+            width: 100%;
+            padding-left: 10px;
+            padding-top: 0px;
+            vertical-align: top;
+            font-size: small;
+            font-family: Arial;
+        }
+
+        .lblData {
+            float: left;
+        }
+
+        .divMessage {
+            margin: 0 auto;
+            padding: 0;
+            width: 1000px;
+            font-size: small;
+            font-family: Arial;
+            height: 120px;
+            margin-top: 30px;
+        }
+
+        .divAfterGrid {
+            margin: 0 auto;
+            padding: 0;
+            width: 1002px;
+            font-size: small;
+            font-family: Arial;
+        }
+
+        .tblAfterGrid {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+            .tblAfterGrid td {
+                border: 1px solid black;
+            }
+    </style>
+
+    <script type="text/javascript" language="javascript">
+
+        function closeWindow() {
+            //var url = window.parent.opener.location.href;
+            //window.opener.location.href = url;
+            window.close();
+        }
+
+        //function openPopup(application) {
+        //    var win1 = window.open('../ApplicationStatus/Default.aspx?application=' + SerialNo + '', '1ndpopup', 'status=1, width=800, height=800, top=100, left=100,scrollbars=yes');
+        //    win1.focus();
+        //}
+
+        //function OpenPopupT() {
+        //    window.open('../ApplicationStatus/view.aspx?SerialNo=" &flag &"', '1ndpopup', 'width=600,height=800,scrollbars=yes,left=350,top=100,right=5,bottom=5');
+        //}
+
+    </script>
+    <script type="text/javascript">
+        function printPage() {
+            if (window.print) {
+                agree = confirm('प्राप्ति रसीद \n\n प्रतीलीपी के लिए OK बटन क्लिक करे?');
+                if (agree) {
+                    window.print();
+                    agree = confirm('प्राप्ति रसीद . \n पुष्टी के लिए OK बटन क्लिक करे');
+                    if (agree) window.navigate('MutationNew.aspx');
+                }
+            }
+            window.onload = function () {
+                document.onkeydown = function (e) {
+
+                    if ((event.altKey) || ((event.keyCode == 27) || ((event.ctrlKey) && ((event.keyCode == 78) || (event.keyCode == 82))) || (event.keyCode == 116) || (event.keyCode == 122))) {
+                        var keycode = event.keyCode
+                        alert(keyCode)
+                        event.keyCode = 0;
+                        event.returnValue = false;
+                    }
+                };
+            }
+            var message = "Please donot refresh the page!";
+            function clickIE4() {
+                if (event.button == 2) {
+                    alert(message);
+                    return false;
+                }
+            }
+
+            function clickNS4(e) {
+                if (document.layers || document.getElementById && !document.all) {
+                    if (e.which == 2 || e.which == 3) {
+                        alert(message);
+                        return false;
+                    }
+                }
+            }
+
+            if (document.layers) {
+                document.captureEvents(Event.MOUSEDOWN);
+                document.onmousedown = clickNS4;
+            }
+            else if (document.all && !document.getElementById) {
+                document.onmousedown = clickIE4;
+            }
+
+            document.oncontextmenu = new Function("alert(message);return false")
+    </script>
+
+</head>
+<body onload="noBack();"
+    onpageshow="if (event.persisted) noBack();" onunload="">
+    <form method="post" action="./Reg2Report?d=17&amp;c=20&amp;s=01&amp;h=12&amp;m=80&amp;v=5+++++++++&amp;p=574&amp;k=551%2c668" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="229CD47B" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="pK7tLg2dgzsJpsQriuX5reh0vtCqxR+zcQ+ZGQHeLBto6dJowHsF3/3N05VfrtibhdxQ5R9VYHFXk/wjULf5qtvOzUPqwXlug9PqaHEoxTAu15WncNTSVg2rlSKM8aAUES4UDF3E2STQ0BVuQhCnj9i5DbJPcz7lfoxDcMqV/3FJeIk8i4I6UTIXAYeDWjtI" />
+</div>
+    <div class="book">
+        <div class="row">
+            <table style="width: 100%">
+                <tr>
+                    <th style="width: 33%; text-align: right;"><a>
+                        <img class="blink_me" style="text-align: right; height: 50px;" src="Images/printer.png" onclick="printDiv()" />
+                    </a></th>
+                    <th style="width: 33%; text-align: center;"><a>
+                        <span id="lblHeadertxt"></span>
+                        
+                    </a>
+                    </th>
+                    <th style="width: 33%; text-align: left;"><a>
+                        <img class="blink_me" style="text-align: right; height: 50px;" src="Images/ic_close.png" onclick="onHome(this)" />
+                    </a></th>
+                </tr>
+            </table>
+
+        </div>
+        <div id="printableArea">
+            <div class="page">
+                <div id="divMain" class="divMain  well">
+                    <div id="divHeader" class="divHeader">
+                        <table width="100%">
+                            <tr>
+                                <td style="width: 10%; margin-left: 10px; padding: 0px;">
+                                    <img id="QRCodeImage" style="width:91px;" />
+                                </td>
+                                <td style="width: 80%; text-align: center;">
+                                    <img id="imgLogo" src="Images_Gov/Biharlogo.jpg" style="height:91px;width:90px;" />
+                                    <br />
+                                    <strong>बिहार सरकार‎ 
+                            <br />
+                                        राजस्व एवं भूमि सुधार विभाग
+                            <br />
+
+                                        <label id="lbldistCir" class="strng"></label>
+                                        <br />
+                                        <u>जमाबंदी पंजी प्रति</u> </strong>
+                                    <br />
+
+                                </td>
+                                <td style="width: 10%; text-align: center; padding: 0px;">
+                                    <span id="lblDate">11/02/2022</span><br />
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="divBlank">
+                    </div>
+
+
+
+                    <div id="divData" class="divTopRowData">
+                        <table class="tblTopRowData">
+                            <tr >
+                                <td>भाग वर्तमान <b>:</b>
+                                      <span id="lblCurVol">5         </span>
+                                </td>
+                               
+                                <td>पृष्ठ संख्या <b>:</b>
+                                     <span id="lblCurPageNo">574</span>
+                                </td>
+                               
+                                <td>जमाबन्दी संख्या <b>:</b>
+                                     <span id="lblEjamaNO">1063</span>
+                                </td>
+                             
+                                <td>कंप्यूटरीकृत जमाबन्दी संख्या <b>:</b>
+                                     <span id="lblUniqueJID">218126700002354</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="divRowData">
+                        <table class="tblData">
+                            <tr>
+                                <td style="width: 90px;">जिला का नाम <b>:</b>
+                                </td>
+                                <td>
+                                    <span id="lblDistName" class="lblData">Saran</span>
+                                </td>
+                                <td style="width: 90px;">अनुमंडल नाम <b>:</b>
+                                </td>
+                                <td>
+                                    <span id="lblSubDivName" class="lblData">Sonpur</span>
+                                </td>
+                                <td style="width: 90px;">अचंल का नाम <b>:</b>
+                                </td>
+                                <td>
+                                    <span id="lblCircleName" class="lblData">Sonpur</span>
+                                </td>
+                                <td style="width: 90px;">हलका का नाम <b>:</b>
+                                </td>
+                                <td>
+                                    <span id="lblHalkaName" class="lblData">कसमर</span>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td style="width: 90px;">मौजा का नाम <b>:</b>
+                                </td>
+                                <td>
+                                    <span id="lblMaujaName" class="lblData">कसमर</span>
+                                </td>
+                                <td style="width: 90px;">होल्डिग संख्या <b>:</b>
+                                </td>
+                                <td>
+                                    <span id="lblHolidingNo" class="lblData">N/A</span>
+                                </td>
+                                <td style="width: 90px;">तौजी संख्या <b>:</b>
+                                </td>
+                                <td>
+                                    <span id="lblTaujiNo" class="lblData">3030</span>
+                                </td>
+
+                                <td style="width: 90px;">थाना नंबर <b>:</b>
+                                </td>
+                                <td>
+                                    <span id="lblThanaNo" class="lblData">80</span>
+                                </td>
+
+                                
+                                
+
+                            </tr>
+                            <tr style="height: 3px;">
+                                <td colspan="10">&nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="Div1" class="divRowData">
+                        <table id="tblOwnerName" class="tblData">
+	<tr style="height: 3px; border: solid 1px black;">
+		<td style="width: 250px;" colspan="8">
+                                    <span id="lblOwnerName" style="display:inline-block;width:300px;">
+अशोक  कुमार  सिंह  राधाचरन सिंह  वो  उपेन्दर नगेंदर वगेरा , पिता/बाप/अबू -लेट  धर्मनाथ  सिंह  रामनाथ  सिंह,  जाति- N/A  </span>
+                                </td>
+	</tr>
+</table>
+
+                    </div>
+                    <div id="divGrid" class="divRowData">
+                        <div>
+	<table cellspacing="0" rules="all" border="1" id="gvData" style="border-color:Black;border-style:None;font-family:Arial;font-size:Small;width:100%;border-collapse:collapse;">
+		<tr align="center" valign="middle">
+			<th scope="col">खाता सं०</th><th scope="col">प्लाट/खेसरा सं०</th><th scope="col">रकबा</th><th scope="col">चौहद्दी</th><th scope="col">परिवर्तन के लिए प्राघिकार</th><th scope="col">लगान</th><th scope="col">सेस</th>
+		</tr><tr>
+			<td align="center">
+                                        
+                                        
+                                        <a id="gvData_lblKhataNo_0" class="aspNetDisabled">551,668</a>
+                                    </td><td align="center">
+                                        
+                                        <a id="gvData_lblPlotNO_0" class="aspNetDisabled">1024,2066</a>
+                                    </td><td>
+                                        <span id="gvData_lblUnit1_0">1</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit1Name_0" style="display:inline-block;width:10px;">ए</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit2_0">14.734</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit2Name_0" style="display:inline-block;width:10px;">डि</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit3_0">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit3Name_0" style="display:inline-block;width:10px;">हे</span>
+                                    </td><td>
+                                        <table style="width:100%;">
+                                            <tr>
+                                                <td style="font-family:Arial;font-size:9px"> <b>पू०:&nbsp;</b><span id="gvData_ChEName_0"></span></td>
+                                                <td style="font-family:Arial;font-size:9px"><b>प०:&nbsp;</b><span id="gvData_ChWName_0"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family:Arial;font-size:9px"> <b>उ०:&nbsp;</b><span id="gvData_ChNName_0"></span></td>
+                                                <td style="font-family:Arial;font-size:9px"><b>द०:&nbsp;</b><span id="gvData_ChSName_0"></span></td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </td><td>
+                                        <span id="gvData_lblChange_0">n/a</span>
+                                    </td><td>
+                                        <span id="gvData_lblLagan_0">20</span>
+                                    </td><td>
+                                        <span id="gvData_lblSes_0">0</span>
+                                    </td>
+		</tr><tr>
+			<td align="center">
+                                        
+                                        
+                                        <a id="gvData_lblKhataNo_1" class="aspNetDisabled">648,714</a>
+                                    </td><td align="center">
+                                        
+                                        <a id="gvData_lblPlotNO_1" class="aspNetDisabled">1981,2040</a>
+                                    </td><td>
+                                        <span id="gvData_lblUnit1_1">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit1Name_1" style="display:inline-block;width:10px;">ए</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit2_1">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit2Name_1" style="display:inline-block;width:10px;">डि</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit3_1">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit3Name_1" style="display:inline-block;width:10px;">हे</span>
+                                    </td><td>
+                                        <table style="width:100%;">
+                                            <tr>
+                                                <td style="font-family:Arial;font-size:9px"> <b>पू०:&nbsp;</b><span id="gvData_ChEName_1"></span></td>
+                                                <td style="font-family:Arial;font-size:9px"><b>प०:&nbsp;</b><span id="gvData_ChWName_1"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family:Arial;font-size:9px"> <b>उ०:&nbsp;</b><span id="gvData_ChNName_1"></span></td>
+                                                <td style="font-family:Arial;font-size:9px"><b>द०:&nbsp;</b><span id="gvData_ChSName_1"></span></td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </td><td>
+                                        <span id="gvData_lblChange_1">n/a</span>
+                                    </td><td>
+                                        <span id="gvData_lblLagan_1">20</span>
+                                    </td><td>
+                                        <span id="gvData_lblSes_1">0</span>
+                                    </td>
+		</tr><tr>
+			<td align="center">
+                                        
+                                        
+                                        <a id="gvData_lblKhataNo_2" class="aspNetDisabled">0</a>
+                                    </td><td align="center">
+                                        
+                                        <a id="gvData_lblPlotNO_2" class="aspNetDisabled">2026</a>
+                                    </td><td>
+                                        <span id="gvData_lblUnit1_2">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit1Name_2" style="display:inline-block;width:10px;">ए</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit2_2">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit2Name_2" style="display:inline-block;width:10px;">डि</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit3_2">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit3Name_2" style="display:inline-block;width:10px;">हे</span>
+                                    </td><td>
+                                        <table style="width:100%;">
+                                            <tr>
+                                                <td style="font-family:Arial;font-size:9px"> <b>पू०:&nbsp;</b><span id="gvData_ChEName_2"></span></td>
+                                                <td style="font-family:Arial;font-size:9px"><b>प०:&nbsp;</b><span id="gvData_ChWName_2"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family:Arial;font-size:9px"> <b>उ०:&nbsp;</b><span id="gvData_ChNName_2"></span></td>
+                                                <td style="font-family:Arial;font-size:9px"><b>द०:&nbsp;</b><span id="gvData_ChSName_2"></span></td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </td><td>
+                                        <span id="gvData_lblChange_2">n/a</span>
+                                    </td><td>
+                                        <span id="gvData_lblLagan_2">20</span>
+                                    </td><td>
+                                        <span id="gvData_lblSes_2">0</span>
+                                    </td>
+		</tr><tr>
+			<td align="center">
+                                        
+                                        
+                                        <a id="gvData_lblKhataNo_3" class="aspNetDisabled">551</a>
+                                    </td><td align="center">
+                                        
+                                        <a id="gvData_lblPlotNO_3" class="aspNetDisabled">1024</a>
+                                    </td><td>
+                                        <span id="gvData_lblUnit1_3">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit1Name_3" style="display:inline-block;width:10px;">ए</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit2_3">0.0002</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit2Name_3" style="display:inline-block;width:10px;">डि</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit3_3">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblUnit3Name_3" style="display:inline-block;width:10px;">हे</span>
+                                    </td><td>
+                                        <table style="width:100%;">
+                                            <tr>
+                                                <td style="font-family:Arial;font-size:9px"> <b>पू०:&nbsp;</b><span id="gvData_ChEName_3"></span></td>
+                                                <td style="font-family:Arial;font-size:9px"><b>प०:&nbsp;</b><span id="gvData_ChWName_3"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family:Arial;font-size:9px"> <b>उ०:&nbsp;</b><span id="gvData_ChNName_3"></span></td>
+                                                <td style="font-family:Arial;font-size:9px"><b>द०:&nbsp;</b><span id="gvData_ChSName_3"></span></td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </td><td>
+                                        <span id="gvData_lblChange_3">n/a</span>
+                                    </td><td>
+                                        <span id="gvData_lblLagan_3">20</span>
+                                    </td><td>
+                                        <span id="gvData_lblSes_3">0</span>
+                                    </td>
+		</tr><tr>
+			<td>&nbsp;</td><td>
+                                        <span id="gvData_lblTotal" style="font-weight:bold;">कुल परिमान</span>
+                                    </td><td>
+                                        <span id="gvData_lblFUnit1">1</span>&nbsp;&nbsp;
+                                <span id="gvData_lblFUnit1Name" style="display:inline-block;width:10px;">ए</span>&nbsp;&nbsp;
+                                <span id="gvData_lblFUnit2">14.7342</span>&nbsp;&nbsp;
+                                <span id="gvData_lblFUnit2Name" style="display:inline-block;width:10px;">डि</span>&nbsp;&nbsp;
+                                <span id="gvData_lblFUnit3">0</span>&nbsp;&nbsp;
+                                <span id="gvData_lblFUnit3Name" style="display:inline-block;width:10px;">हे</span>
+                                    </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+	</table>
+</div>
+                    </div>
+                    <div class="divRowData">
+                        <span><b>अंतिम लगान का विवरण</b></span>
+
+                        <div>
+	<table cellspacing="0" rules="all" border="1" id="gvLower" style="border-style:None;font-family:Arial;font-size:Small;width:100%;border-collapse:collapse;">
+		<tr>
+			<th scope="col">तारीख</th><th scope="col">प्राप्ति पत्र सं०</th><th scope="col">साल से</th><th scope="col">साल तक</th><th scope="col">लागत बकाया</th>
+		</tr><tr>
+			<td>
+                                        <span id="gvLower_lblIDate_0">2014-04-05</span>
+                                    </td><td>
+                                        <span id="gvLower_lblRecieptNo_0">258469</span>
+                                    </td><td>
+                                        <span id="gvLower_lblYearSince_0">2013</span>
+                                    </td><td>
+                                        <span id="gvLower_lblYearTo_0">2014</span>
+                                    </td><td>
+                                        <span id="gvLower_lblLagatBakya_0">0</span>
+                                    </td>
+		</tr><tr>
+			<td>
+                                        <span id="gvLower_lblIDate_1">2019-07-22 20:50:56.0</span>
+                                    </td><td>
+                                        <span id="gvLower_lblRecieptNo_1">0332859018</span>
+                                    </td><td>
+                                        <span id="gvLower_lblYearSince_1">2014-2015</span>
+                                    </td><td>
+                                        <span id="gvLower_lblYearTo_1">2019-2020</span>
+                                    </td><td>
+                                        <span id="gvLower_lblLagatBakya_1">100</span>
+                                    </td>
+		</tr>
+	</table>
+</div>
+
+
+                    </div>
+
+
+
+                    <div style="height: 30px; width: 1000px; margin: 0 auto; border-top: solid 1px black;">
+                        
+                    </div>
+                    <div class="divRowData">
+                        <div id="divHeader12" class="divHeader">
+                            <table width="100%">
+                                <tr>
+                                    <td style="width: 50%; margin-left: 10px; padding: 0px;">
+                                        <b>उपरोक्त जमाबंदी के विरुद्ध दाखिल ख़ारिज का विवरण</b>
+                                    </td>
+                                    <td></td>
+                                    <td style="width: 50%; margin-left: 10px; padding: 0px; color: red">
+                                        <br />
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            
+                            <div>
+	<table class="gridC" cellspacing="0" cellpadding="4" rules="all" border="1" id="grdApplicationStatus" style="color:#333333;font-size:Medium;height:26%;border-collapse:collapse;">
+		<tr style="color:White;background-color:#000084;font-weight:bold;height:20px;">
+			<th align="center" valign="middle" scope="col" style="height:50%;width:10%;">Sl No</th><th align="center" valign="middle" scope="col" style="width:20%;">Case No</th><th align="center" valign="middle" scope="col">Halka</th><th align="center" valign="middle" scope="col" style="width:9%;">Khata No</th><th align="center" valign="middle" scope="col" style="width:9%;">Plot No</th><th align="center" valign="middle" scope="col" style="width:15%;">Applicant Name</th><th align="center" valign="middle" scope="col" style="width:11%;">Application Date</th><th align="center" valign="middle" scope="col" style="width:30%;">Status</th><th scope="col">View</th>
+		</tr><tr align="left" style="background-color:#EEEEEE;height:20px;">
+			<td align="center" valign="middle">
+                                            <b>
+                                                9283 </b>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lbreg_0">514</span>
+                                            <span id="grdApplicationStatus_Label2_0">/</span>
+                                            <span id="grdApplicationStatus_Label3_0">2020 - 2021</span>
+                                            
+                                        </td><td align="center" valign="middle" style="width:9%;">
+                                            <span id="grdApplicationStatus_lblHalka_0">12</span>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lblKhata_0">551</span>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lblPlot_0">1024</span>
+                                        </td><td align="left" valign="middle">
+                                            <span id="grdApplicationStatus_lblapplicant_0">श्री  ठाकुर राय  </span>
+                                        </td><td align="left" valign="middle">
+                                            <span id="grdApplicationStatus_lblapplicant_date_0">29/06/2020</span>
+                                        </td><td align="left" valign="middle">
+                                            Status
+                                            <span id="grdApplicationStatus_lblStatus_0">Correction Slip generated</span>
+                                        </td><td>
+                                            <input type="image" name="grdApplicationStatus$ctl02$ImageButton1" id="grdApplicationStatus_ImageButton1_0" src="ApplicationStatus/images/view.gif" />
+                                        </td>
+		</tr><tr align="left" style="background-color:Gainsboro;height:20px;">
+			<td align="center" valign="middle">
+                                            <b>
+                                                9307 </b>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lbreg_1">538</span>
+                                            <span id="grdApplicationStatus_Label2_1">/</span>
+                                            <span id="grdApplicationStatus_Label3_1">2020 - 2021</span>
+                                            
+                                        </td><td align="center" valign="middle" style="width:9%;">
+                                            <span id="grdApplicationStatus_lblHalka_1">12</span>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lblKhata_1">551</span>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lblPlot_1">1024</span>
+                                        </td><td align="left" valign="middle">
+                                            <span id="grdApplicationStatus_lblapplicant_1">श्री ठाकुर राय </span>
+                                        </td><td align="left" valign="middle">
+                                            <span id="grdApplicationStatus_lblapplicant_date_1">29/06/2020</span>
+                                        </td><td align="left" valign="middle">
+                                            Status
+                                            <span id="grdApplicationStatus_lblStatus_1">Correction Slip generated</span>
+                                        </td><td>
+                                            <input type="image" name="grdApplicationStatus$ctl03$ImageButton1" id="grdApplicationStatus_ImageButton1_1" src="ApplicationStatus/images/view.gif" />
+                                        </td>
+		</tr><tr align="left" style="background-color:#EEEEEE;height:20px;">
+			<td align="center" valign="middle">
+                                            <b>
+                                                9308 </b>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lbreg_2">539</span>
+                                            <span id="grdApplicationStatus_Label2_2">/</span>
+                                            <span id="grdApplicationStatus_Label3_2">2020 - 2021</span>
+                                            
+                                        </td><td align="center" valign="middle" style="width:9%;">
+                                            <span id="grdApplicationStatus_lblHalka_2">12</span>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lblKhata_2">551</span>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lblPlot_2">1024</span>
+                                        </td><td align="left" valign="middle">
+                                            <span id="grdApplicationStatus_lblapplicant_2">श्री ठाकुर राय </span>
+                                        </td><td align="left" valign="middle">
+                                            <span id="grdApplicationStatus_lblapplicant_date_2">29/06/2020</span>
+                                        </td><td align="left" valign="middle">
+                                            Status
+                                            <span id="grdApplicationStatus_lblStatus_2">Correction Slip generated</span>
+                                        </td><td>
+                                            <input type="image" name="grdApplicationStatus$ctl04$ImageButton1" id="grdApplicationStatus_ImageButton1_2" src="ApplicationStatus/images/view.gif" />
+                                        </td>
+		</tr><tr align="left" style="background-color:Gainsboro;height:20px;">
+			<td align="center" valign="middle">
+                                            <b>
+                                                9309 </b>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lbreg_3">540</span>
+                                            <span id="grdApplicationStatus_Label2_3">/</span>
+                                            <span id="grdApplicationStatus_Label3_3">2020 - 2021</span>
+                                            
+                                        </td><td align="center" valign="middle" style="width:9%;">
+                                            <span id="grdApplicationStatus_lblHalka_3">12</span>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lblKhata_3">551</span>
+                                        </td><td align="center" valign="middle">
+                                            <span id="grdApplicationStatus_lblPlot_3">1024</span>
+                                        </td><td align="left" valign="middle">
+                                            <span id="grdApplicationStatus_lblapplicant_3">श्री ठाकुर  राय </span>
+                                        </td><td align="left" valign="middle">
+                                            <span id="grdApplicationStatus_lblapplicant_date_3">29/06/2020</span>
+                                        </td><td align="left" valign="middle">
+                                            Status
+                                            <span id="grdApplicationStatus_lblStatus_3">Correction Slip generated</span>
+                                        </td><td>
+                                            <input type="image" name="grdApplicationStatus$ctl05$ImageButton1" id="grdApplicationStatus_ImageButton1_3" src="ApplicationStatus/images/view.gif" />
+                                        </td>
+		</tr>
+	</table>
+</div>
+                            
+                        </div>
+
+                    </div>
+                    <div style="height: auto; width: 1000px; margin: 0 auto; border-top: solid 1px black;">
+                    </div>
+                    
+                    <div style="height: auto; width: 1000px; margin: 0 auto;">
+                        <div>
+
+</div>
+                    </div>
+
+
+                    <div id="divMessage" class="divMessage">
+                        <u>यह एक कम्पयुटर जनित प्रति है</u>
+                        <br />
+                        <u>यह प्रपत्र केवल प्रार्थी की जानकारी के लिए है</u>
+                        <br />
+                        <u style="color: red">इसका उपयोग किसी भी न्यायलय में साक्ष्य के रूप में नही किया जा सकता है</u><br />
+                        <u>किसी भी प्रकार की अशुद्धियों के लिए सम्बन्धित अंचलाधिकारी से संपर्क करे</u><br />
+                        <u>प्लाट का नक्शा देखने के लिए प्लाट नंबर क्लिक करें|</u>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+        </form>
+</body>
+<script type="text/javascript">
+        onPrint = () => {
+            var divContents = document.getElementById("printableArea").innerHTML;
+            var printWindow = window.open('', '', '', '');
+            printWindow.document.write(divContents);
+            printWindow.document.close();
+            printWindow.print();
+             
+            //var printContents = document.getElementById(divName).innerHTML;
+            //var originalContents = document.body.innerHTML;
+            //document.getElementById('header').style.display = 'none';
+            //document.getElementById('footer').style.display = 'none';
+            //document.body.innerHTML = printContents;
+             //window.print();
+
+
+            document.body.innerHTML = originalContents;
+
+        }
+
+            onHome = () => {
+                closeWindow();
+
+            //window.location.assign("../UserLogin.aspx");
+        }
+            function printDiv() {
+                var printContents = document.getElementById("printableArea").innerHTML;
+                var originalContents = document.body.innerHTML;
+
+                document.body.innerHTML = printContents;
+
+                window.print();
+
+                document.body.innerHTML = originalContents;
+            }
+</script>
+
+</html>

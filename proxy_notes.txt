@@ -1,0 +1,2 @@
+remove 
+HTTP_PROXY and HTTPS_PROXY from env variable
