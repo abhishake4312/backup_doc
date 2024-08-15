@@ -1,0 +1,122 @@
+									1) Digital lead growth and ensure FTQ.
+
+
+Ensure FTQ in delivering the items in 16.11 blockpoint.
+
+We successfully delivered work on Wrong and Closed activity Id user story -- It is a big US involves 4 different US which will redesign the whole chargeline issue in DWR.
+Successfully migrated the application from log4j 1.x to log4j 2.x.
+IE to Edge migration - DWR application was giving errors when we are launching application in Edge. So change scripts which will accept edge browser.
+Addressed the production issue found in Synchronization of user data with TEAMS within a week and delivered a working solution.
+Working on redesigning the logic for generating roles and groups in DWR application. Eliminating all the BLUES references.
+During UAT testing of 16.11 release, users pointed some change in the requirements at very last moment. Had multiple meetings with the user to freeze the new requirement quickly, we wanted to ensure First time quality as well as don't want to delay the release. Hence worked on new requirement quickly and did demo with user frequently to make things ready. 
+Helped the US counterparts in understanding the production issue coming after 16.11 deployment. Added logs to help the analyze and fix the issue..
+Connected with user directly to finalize all the requirements for 16.12 release. Did requirement gathering , timely demos and integration testing with stakeholders so that we are on time with release in November.
+Helped getting quick workaround for production issue related with SOW. Here is the statement from users which shows the criticality of work " Please elevate to High Priority. Issue need to be resolved to obtain Experimental Ticket for Flight from FAA. Flight will be delayed day by day if QA Records cannot receive the SOW DWRs. Is there a work around for this? Please advise. Thanks "
+Worked in weekend to analyze the MESCI-DWR production issue. Debug one of the issue related with bad SQL issue in DWR code. This issue was critical as it was stopping MESCI Gold connections.
+Accomplished difficult task of providing high level estimates for more than 10 user story in a day that will be prioritized for 2023 LRBP. As Business requested these changes to be estimated before PI planning meeting.
+
+
+Successfully delivered 16.12 blockpoint  on time with first time quality. Resolved all coverity findings CWE 285 and made sure we are compliance with our target Coverity commitment. With this delivery accomplished all the task assigned for DWR in 2022.
+    Values:
+         Achieve better business outcomes
+  FEEDBACK - "This is in appreciation for all the work you have accomplished bringing the Activity ID functionality on-line and available for the customer.  You worked through a developer transition and brought the new team up to speed.  You utilized seek, speak and listen to pivot when the customer requirements changed 3/4 through the project                       and delivered a quality product.
+                     Thank you."
+
+
+  Scheduled regular meetings with the stakeholders to gather and freeze requirement for Stamping issue which is a major issue as the final PDF goes for FAA authorization.
+Mentoring the freshers by providing adequate time and KT and slowly bringing them to speed. Guiding them on professional and personal aspect to make their journey memorable in Boeing. 
+     
+Connected with the stakeholders late night to resolve the issue of FTWS number in SOW which was delaying some flight test. Gave the workaround for the user.
+
+
+Taking ownership for DRQ modules of FTCS and filling shoes for Mercy in parallel to DWR commitments.
+
+
+
+										2)Employee Engagement & Growth 
+Contribution 
+
+ Actively involved in team building activities. Focal for organizing different events within team.
+ Starting from covid times conducting biweekly team building activity.
+ Involving and encouraging other team members to participate in organizing activities and events.
+ Technically learned a lot about UNIX from writing scripts for various build and deploy tasks.
+ Learned/ refreshed topics like Hibernate, Springboot, Docker,angular.
+Organized all hands meeting for senior manager in 3rd quarter.
+
+
+Recognition for team building activity - "Thank you for conducting team engagement activity throughout the year. It was very much needed in the virtual work environment to keep the team connected. It also used to refresh us to do better work at our respective projects. Last but not the least thank you for DWR project KT. Have learnt lot about the DWR application."
+"Thank you for bringing different teams together through team engagement activity. It is a great way to unite teams and make them feel energetic towards work. Thank you for organizing it and making more fun each time."
+
+
+									3)Improve Product Stability and compliance
+
+Address all the compliance related to coverity vulnerabilities like : log4j1.x version , CSRF issues etc.
+
+
+
+Address all the priority 1 production issue timely.
+
+
+
+Involve in innovation by automating the UI framework for regression testing using Selenium. This is a major milestone which will save hours for developers as well as user  for doing manual testing through ADO. Designed the application based various modules so that user can run a specific block to test all scenario for a module. User were excited to use this application while doing UAT testing.
+
+
+
+Compliance with resolving or mitigating any high and medium level coverity issues found during scanning the application with new version of coverity. Determined in not introduction new coverity defects in our application and resolving the issues as it comes. 
+Working on setting up local Desktop-Coverity-eclipse setup so that files can be locally scanned for coverity issue and can be resolved right then.
+
+
+During 16.12 release made sure we resolve all Coverity new findings before delivery and compliance with our commitment. As well as Resolving high impact SQL injection coverity issue. 
+
+
+
+
+										4)Product-centricity and DevSecOps.
+1) Focused on getting the purchase services team onboard so that we can accomplish the tangible goals within a period of 2 months:
+
+Worked with Shailaja(one of the purchase services team) to finish (the design,requirement, implemention,testing, review and demo) for all the Activity ID issue user story which was critical change in the DWR application for interaction with Gold application.
+Worked with Kiruba(TCS purchase service member) to integrate junit test framework with DWR application. Tried completing unit test scenarios for urgent demand module..
+Worked with Rabiroshan(TCS purchase service member) in automating the UI framework for regression testing using Selenium. This is a major milestone which will save hours for developers as well as user  for doing manual testing through ADO. Designed the application based various modules so that user can run a specific block to test all scenario for a module. User were excited to use this application while doing UAT testing.
+
+
+2) Member of DevSecOps team -
+
+Involve in Assessment which is part of our IT&DA objective to lead Boeing’s transition to a Product-Centric and Cloud model enabled by matured DevSecOps practices.
+Work with respective application owner/team focals on DSO assessment and implementation plan.
+Coordinate with product teams for maturity assessment. End to end coverage of 4 key aspects and 16 activities of DevSecOps.
+·Spread DevSecOps awareness and educate
+COMPLETED the first set of assessment for 3 applications assigned to me before time.
+DEVSECOPS FEEBACK- "This is to recognize your efforts for leading DevSecOps assessment  in Q3 & Q4 of 2022."
+
+
+3)  Redesign ADO pipeline for coverity builds and websphere deployement. Working in CI/ CD pipleline for coverity scans in ADO.
+
+
+
+4) Improved the deployment refresh time to 4hours to instantaniuos deployment on WebSphere.
+
+
+
+5) Dockerize the FT-MIST application as a part of innovation sprint.
+     
+
+
+
+
+
+6) Keeping TFS updated -
+
+    Creating the appropriate task and test cases for all development items.
+    Making sure to update task on daily basis.
+
+
+7) Gain stakeholders trust and speak up about the dependencies, access requirement and all the impediment upfront so that there should not be any blockers from development side.
+
+
+
+8) Complete all the priorities in DWR for 2022 with first time quality.
+
+
+
+  
+

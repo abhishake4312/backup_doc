@@ -1,0 +1,49 @@
+SEEK SPEAK AND LISTEN Q3
+
+
+What are your most valuable priority contributions and lessons learned since the last performance & development conversation?
+
+
+
+The most valuable priority is "Focus on First time quality ,user requirement and transparency in communication". During UAT testing of 16.11 release, users pointed some change in the requirements at very last moment. Had multiple meetings with the user to freeze the new requirement, we wanted to ensure First time quality hence we postpone the release by couple of weeks and worked on new requirement by the user. 
+
+Lesson learned is always ensure First time quality in delivering and make user aware of all scenarios.
+
+
+
+
+
+Which strengths and capabilities are you most focused on developing? How do you plan to continue developing them to succeed in the future either in your current role or a future role?  What actions are you taking to develop your career?
+
+
+WORK side development -- Strength and capabilitites most focused on developing is taking ownership of entire application. Initiating requirment discussions directly with the user, clearly communicating, presentation and demos with the user. Gaining user confidence in development team and making user aware of feasibility of solution. 
+
+Personal development -- Focused on my IDP which states goal of becoming a solution architect. Focused on developing my system design skills working on Fundamentals of Distributed Systems.   , Designing scalable microservice application etc.
+
+
+
+
+
+
+
+How have you demonstrated the Seek, Speak & Listen habits in your daily work?
+
+
+
+
+Seek, Speak & Listen habits is by default integrated with the work I do daily.
+
+Seek - During 16.11 release seek help from Chase and Jana to complete UAT testing from development side. As develop instance of DWR has limited access hence seek help for completing UAT testing.
+
+
+
+
+Speak- During every meeting either its related to project or generic meeting . I always speak my mind and never hesitate to speak. Whether its sprint planning, roadmap, retrospect or team building activities meeting I always put forward my points and suggestion.
+
+Confidently speaking in front of users about the requirment and clearly communicating the feasibility of solution.
+
+
+
+Listen - Listening resolves more problems than speaking.
+
+•During our DWR meeting with user or Jana/Chase(Counterpart in US), I always try to listen more than I speak because these SMEs are working on the application from years so listening to them carefully will clear my smallest

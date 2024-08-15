@@ -1,0 +1,80 @@
+Q4 acheivements:
+
+LOCAL COVERITY SETUP , help from mattermost, devsecops
+
+
+
+     Q1) What are your most valuable priority contributions and lessons learned since the last performance & development conversation?
+
+     The most valuable priority contributions and lesson learned last quarter is "Achieve better busniess outcome even in difficult scenario" This quarter we had a major release of this year. During the release had many challenges due to less counterpart support for integration testing. But kept the focus and moral high and kept pushing for the release and indeed had a successful outcome.
+
+Lesson learnt - Need to step up more firmly in difficult times and believe in your capabilities.
+
+     1) Successfully delivered 16.12 blockpoint  on time with first time quality. Resolved all coverity findings CWE 285 and made sure we are complaince with our target coverity commitment. With         this delivery accomplished all the task assigned for DWR in 2022.
+	
+	Values:
+		 Achieve better business outcomes
+         
+         FEEDBACK - This is in appreciation for all the work you have accoplished bringing the Activity ID functionality on-line and available for the customer.  You worked through a 		  		    developer transition and brought the new team up to speed.  You utilized seek, speak and listen to pivot when the customer requirements changed 3/4 through the project                       and delivered a quality product.
+
+                     Thank you.
+
+      2) Scheduled regular meeting with the stakeholders to gather and freeze requirement for Stamping issue which is a major issue as the final PDF goes for FAA authorisation.
+
+      3) Mentoring the freshers by providing adequate time and KT and slowly brigining them to speed. Guiding them on professional and personal aspect to make their journery memorable in          Boeing. 
+
+      4) Connected with the stakeholders late night to resolve the issue of FTWS number in SOW which was delaying some flight test. Gave the workaround for the user.
+
+      5) Does integration testing for production issue of general workbook. Added logs to analyze in higher env.
+
+      6) Resolving high impact SQL injection coverity issue. 
+  
+      7) Working on dockerizing the FT-MIST application.
+      
+      8) Taking ownership for DRQ modules of FTCS and filling shoes for Mercy in parallel to DWR commitments.
+
+      8) DEVSECOPS FEEBACK- "This is to recognize your efforts for leading DevSecOps assessment  in Q3 & Q4 of 2022."
+     
+      9) Other recognition - Thank you for conducting team engagment activity through out the year. It was very much needed in the virtual work environement to keep the team connected. It also used to refresh us to do better work at our respective projects. Last but not the least thank you for DWR project KT. Have learnt lot about the DWR application.
+
+Thank you for bringing different teams together through team engagement activity. It is a great way to unite teams and make them feel energetic towards work. Thank you for organising it and making more fun each time.
+
+
+
+      Q2) Which strengths and capabilities are you most focused on developing? How do you plan to continue developing them to succeed in the future either in your current role or a future           role?  What actions are you taking to develop your career?
+
+
+The strength and capabilities focused on developing is taking the complete ownership of the DWR application. Sometime being the only developer in the project we doubt our capabilities due to lack of support. On a positive side it gives you immense confidence in becoming a complete developer whether its development, testing as well as doing production support in odd hours.
+
+
+
+Other strength which I continue to develop is guiding and mentoring the freshers by providing adequate time and KT and slowly bringing them to speed. Guiding them on professional and personal aspect to make their journey memorable in Boeing. Making them independent so that they can also take the ownership of the application.
+
+ 
+ Actions taken to develop my career is focusing on my IDP which states goal of becoming a solution architect. Connecting with architects in understanding their path and journey. Focused on developing my system design skills, working on Fundamentals of Distributed Systems, Designing scalable microservice application etc. Completed Rest API designing tutorial from plural site last month.
+
+
+
+
+
+
+      Q3) How have you demonstrated the Seek, Speak & Listen habits in your daily work?
+SEEK  
+
+In Q4 seek help from Coverity mattermost channel in successfully setting up local Coverity eclipse desktop which will help developers in resolving any Coverity vulnerability at time of implementation only and always in compliance with organization commitment towards mitigating any defect.
+
+
+
+SPEAK
+When deploying DWR blockpoint 16.12, faced challenges in getting US counterpart support in doing integration testing which cannot be done alone as we have limited access But Speak about this issue with Product manager and getting things resolved timely.
+
+
+
+LISTEN
+
+During my mentoring and KT session to fresher I always try to listen them properly in order to understand their problems and small requirements. 
+	  
+
+
+
+

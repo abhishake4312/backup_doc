@@ -1,0 +1,62 @@
+
+QUESTIONS:
+
+
+
+
+1) Protocol for synchronous calls:
+
+	HTTP
+	
+	
+2) In microservices pattern that routes client request to an available service instances:
+
+    Service Registry or Service Discovery
+
+
+3) Handles messages in microservices:
+
+	Message Broker (e.g., Apache Kafka, RabbitMQ)
+
+
+4) ArrayList adding Lambda expression:
+
+	Example of adding elements to ArrayList using Lambda expression:
+	java
+	Copy code
+	ArrayList<String> list = new ArrayList<>();
+	list.add("Item1");
+	list.add("Item2");
+	list.forEach(item -> System.out.println(item));
+	
+	
+5) Hibernate might span multiple transactions or must span 1 transaction:
+
+	Hibernate can span multiple transactions. It supports both short transactions (single transaction for each operation) and long transactions (spanning multiple operations).
+	
+	
+6) Default constructor in Hibernate POJO - Required or not:
+
+	A default (no-argument) constructor is generally required in Hibernate POJOs. Hibernate uses reflection to instantiate objects, and a default constructor is needed for that purpose.
+	
+	
+7) Java Spring generates primary key values:
+
+	Spring can generate primary key values using various strategies, and the choice depends on the database and configuration. Common strategies include:
+	GenerationType.IDENTITY: Database auto-increment
+	GenerationType.SEQUENCE: Database sequence
+	GenerationType.TABLE: Using a separate database table to generate unique keys
+	GenerationType.AUTO: Hibernate chooses an appropriate strategy based on the database dialect.
+
+1) @Transactional in java , propogation requires new for inner method to be part of seperate transaction.
+
+
+2) Streams 
+CARS91:
+1) Streaming synchronous and parallet streaming
+2) SQL partitioning
+
+
+
+
+

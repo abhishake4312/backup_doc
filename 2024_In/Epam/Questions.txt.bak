@@ -1,0 +1,30 @@
+Coding:
+1) FirstPositiveMissing
+2) NextGreaterElementInArray
+3) Heap,Stack,String pool memory
+4) Comparator and Comparable
+5) public class ExecutionOrder {
+   public ExecutionOrder() {
+      System.out.println("Entered in constructor");
+   }
+   public static void main(String[] args) {
+      System.out.println("Entered in Main");
+      ExecutionOrder e = new ExecutionOrder();
+   }
+   static int a = abc();
+   static {
+      System.out.println("Entered In static block");
+   }  
+   static int b = abc();
+   
+   public static int abc() {
+      System.out.println("Entered in abc method");
+      return 10;
+   }
+}
+
+
+output
+
+Entered in Main
+Entered in constructor

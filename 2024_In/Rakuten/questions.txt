@@ -1,0 +1,6 @@
+arr[] { "a","abc","abcd"}
+String s={"abmpdcd"}
+
+
+String a="apple is sour"
+String b="apple is sweet"

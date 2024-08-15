@@ -1,0 +1,83 @@
+Q)What are your most valuable priority contributions and lessons learned from the last quarter?
+
+My most valuable priority from 1st quarter is Deliver excellence & compliance - meet business goals and commitments .   
+
+
+
+In Q1/Q2  worked on multiple user stories and issues which were raised by the users.
+
+
+
+1) User story for stamping of comments in full buyoff for removals DWR. Already deployed in 16.13 blockpoint and ready for production.
+
+
+
+2) Design, architect , developed and tested the aircraft configuration reporting functionality in DWR. This was a complex user story in which we need to design the logic from scratch ,   collecting all the aircraft configuration worksheets and their respective cross references from entire DWR database. 
+
+   Wrote multiple complex queries of fetching data from multiple tables and sort different attributes based on their desired engineering completion date.
+Other activities:
+
+1) Part of DevSecOps team and coordinated with 3 IT&DA product manager to complete their assessment.
+
+2) Part of core team engagement activity group under Srini. Help in organizing the teams and game for the event.
+
+   Create a PDF as well as CSV view of entire aircraft configuration file.
+   Initiated multiple design discussion with the stakeholders to cater each and every requirement. Worked in an agile manner of showing demo and getting feedback after completion of each    module. Raise all questions and scenario prior so that we make sure we follow FIRST TIME QUALITY in all User-Story we work.
+
+Parallel work
+
+  1) Setting a CI/CD pipeline for DWR build and deployment.
+  2) Containerizing the DWR build with help of docker image and containers so that all DWR dependency and code is package and ship together which can run in any env without different  scripts .
+
+
+
+Other activities:
+
+1) Part of DevSecOps team and coordinated with 3 IT&DA product manager to complete their assessment.
+
+2) Part of core team engagement activity group under Srini. Help in organizing the teams and game for the event.
+
+
+
+
+
+
+
+
+Q)Which strengths and capabilities are you most focused on developing? How do you plan to continue developing them to succeed in the future?
+
+ANS)
+The strength and capabilities that I am most focused upon is broadening my skills in different areas like devOps and core tech skills development. 
+
+Focused on core learning of Docker and Kubernetes which has enriched my skills in devOps.
+Along with the domain learning I am also focused on enhancing my skills by taking up multiple courses on Plural-sight. Already completed Spring fundamental in Java, Design pattern in java and working on Spring MVC and Spring boot courses.
+
+
+
+Helping freshers take the ownership of the module. Working with them closely and reviewing their code and helping them adopt best practices while writing their code and building their confidence for giving demo in front of stakeholders.
+
+
+
+
+
+
+
+
+
+Q)How have you demonstrated the Seek, Speak & Listen habits in your daily work?
+
+ANS)
+Seek, Speak & Listen habits is by default integrated with the work I do daily.
+
+
+
+Seek - During aircraft configuration report creation CR seek help from users in understanding their small requirement as well so that we don't miss any. 
+
+
+Speak- During every meeting either its related to project or generic meeting . I always speak my mind and never hesitate to speak. Whether its sprint planning, roadmap, retrospect or team building activities meeting I always put forward my points and suggestion.
+
+
+
+Listen - Listening resolves more problems than speaking.
+
+As I am working with freshers my more focus is listening to their thought and doubts about the application and making them comfortable with their work.

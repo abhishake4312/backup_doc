@@ -1,0 +1,7 @@
+1) In a very big file of 10 GB how will I count the frequency of each word.
+2) Internal working of hasmap what happens when the collision happen.
+Chaining: In case of a collision, a linked list (or a tree in Java 8 and later, for large lists) is used to store multiple key-value pairs at the same index in the array. Each element in the linked list (or tree) contains both the key and value. New elements with colliding hash codes are added to the end of the linked list (or tree) at the corresponding index.
+3) Concurrency framework
+Java Concurrency API (java.util.concurrent): This is a standard part of the Java platform since Java 5. It provides high-level concurrency utilities such as Executors, Thread Pools, Locks, Concurrent Collections, and atomic variables.
+4) Builder design pattern (Lombok) 
+Lombok provides @Builder annotation, which automatically generates a builder class for your Java classes. This can significantly reduce the amount of code you need to write to implement the Builder pattern manuall

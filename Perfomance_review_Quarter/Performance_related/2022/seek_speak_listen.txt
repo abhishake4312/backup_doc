@@ -1,0 +1,89 @@
+Q)What are your most valuable priority contributions and lessons learned from the last quarter?
+
+
+My most valuable priority from last quarters is DRIVE INNOVATION AND EXECELLENCE THROUGH COLLABRATION .   OPERATE WITH EXCELLENCE and Delivery excellence & .
+
+
+
+Q1  worked on multiple user stories and issues which were raised by the users.
+
+1) In the first quarter main focus was to get purchase services team onboard so that we can accomplish the tangible goals within a period of 2 months. Had recurring meeting with them
+   to make them understand the functional as well as technical part of DWR application.
+
+2) Worked with Shailaja(one of the purchase services team) to finish (the design,requirement, implemention,testing, review and demo) for all the Activity ID issue user story 
+   which was critical change in the DWR application for interaction with Gold application.
+   
+3) Worked with Kiruba(TCS purchase service member) to integrate junit test framework with DWR application. Tried completing unit test scenarios for urgent demand module.  
+
+4) Worked with Rabiroshan(TCS purchase service member) in automating the UI framework for regression testing using Selenium. This is a major milestone which will save hours for
+   developers as well as user  for doing manual testing through ADO. Designed the application based various modules so that user can run a specific block to test all scenario 
+   for a module. User were excited to use this application while doing UAT testing.
+   
+5) Migrated the application from log4j 1.x to log4j 2.x
+
+6)  Production issue synchronize user data
+7) IE to Edge migration - DWR application was giving errors when we are launching application in EDge. So change scripts which will accept edge browser.
+
+
+
+
+
+Q2 FUTURE PRIORITIES IN DWR 
+
+1) Production deployment of all activity id issue
+
+2) Redisgn ADO pipeline for coverity builds and websphere deployement. 
+
+
+
+
+•Gave timely Demo to make user aware of the current status of the US. Raise all questions and scenario prior so that we make sure we follow FIRST TIME QUALITY in all User-Story we work.
+
+
+•We also completed work on Wrong and Closed activity Id user story -- It is a big US involves 4 different US which will redesign the whole chargeline issue in DWR. This 2 user story are already in line for production release in October 1st week.
+
+IMPROVED THE DEPLOYEMENT REFRESH TIME FROM 4hours to instantaniuos deployement on websphere.
+SUCCESSFULLY COMPLETED ALL PRIORITY WITH FIRST TIME QUALTIY
+
+
+
+
+
+
+
+Q)Which strengths and capabilities are you most focused on developing? How do you plan to continue developing them to succeed in the future?
+
+ANS)
+The strength and capabilities that I am most focused upon is learning the domain of BT&E , understanding the architecture change of FTCS to Daedalus, understanding the role and integration of FTCS and DWR application with whole BT&E, completing the basic IT pathway trainings which will strengthen my IT capabilities. 
+
+
+Along with the domain learning I am also focused on enhancing my skills by taking up multiple courses on Plural-sight. Already completed Spring fundamental in Java, Design pattern in java and working on Spring MVC and Spring boot courses. Along with this learning Python with team so that we will be comfortable working with Daedalus work.
+
+
+
+
+
+
+
+
+
+Q)How have you demonstrated the Seek, Speak & Listen habits in your daily work?
+
+ANS)
+Seek, Speak & Listen habits is by default integrated with the work I do daily.
+
+Seek - When we started learning and working on the DWR application. There were many impedance we faced with respect to re-designing the build-pipeline of the application. I always put forward all the problems we were facing in transition phase and always seek help from counterpart in understanding the whole process.
+
+While setting up WAS server with local code base and creating the profiles for the application to run on local machine. We faced issues on selecting the right eclipse version and many setup related changes.
+
+I seek help from Nawaz (former FTCS infrastructure admin) to resolve all my issues with WAS and profile creation.
+
+
+
+Speak- During every meeting either its related to project or generic meeting . I always speak my mind and never hesitate to speak. Whether its sprint planning, roadmap, retrospect or team building activities meeting I always put forward my points and suggestion.
+
+
+
+Listen - Listening resolves more problems than speaking.
+
+•During our DWR meeting with user or Michelle(Counterpart in US), I always try to listen more than I speak because these SMEs are working on the application from years so listening to them carefully will clear my smallest

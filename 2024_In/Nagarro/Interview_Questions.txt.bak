@@ -1,0 +1,10 @@
+
+QUESTIONS:
+
+1) Protocol for synchronous calls -- HTTP,FTP,SOAP SMTP
+2) In microservices pattern that routes client requst to an available service instances
+3) Handles messages in microservices
+4) ArrayList adding Lamda expression
+5) Hibernate might span multiple transactions or must span 1 transaction
+6) Default constructor in hibernate POJO - Required or not
+7) Java Spring generates primary key values

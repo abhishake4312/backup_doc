@@ -1,0 +1,81 @@
+
+Q)What are your most valuable priority contributions and lessons learned from the last quarter?
+
+
+My most valuable priority from last quarters is OPERATE WITH EXCELLENCE and Delivery excellence & compliance- meet business goals and commitments .
+
+
+
+Last 3 quarter  worked on multiple user stories and issues which were raised by the users.
+
+
+•In the first quarter our main focus was to make DWR build and deployment stable. We first migrated the entire code base to GIT , automated the build after changing the build scripts , integrated the coverity inside build and done the local profile creation and websphere setups.
+
+•In the 2nd quarter we had a  successful first DWR release after several years. Multiple part removal issue was resolved which was critical as it was not allowing user to remove parts. Worked with Michelle to do the integration testing also as it was first release.
+
+•Gave timely Demo to make user aware of the current status of the US. Raise all questions and scenario prior so that we make sure we follow FIRST TIME QUALITY in all User-Story we work.
+
+•In the 3rd quarter we had another  release in which we delivered Capturing remarks issue ( This was one of the critical user story which deals with FAA approval based on final DWR PDF.)
+
+•We also worked on Integrity of Airplane configuration ( Helped user to analyze the situation of worksheet number issue in different browser session and made the user aware about the different scenario associated)
+
+•We also completed work on Wrong and Closed activity Id user story -- It is a big US involves 4 different US which will redesign the whole chargeline issue in DWR. This 2 user story are already in line for production release in October 1st week.
+
+IMPROVED THE DEPLOYEMENT REFRESH TIME FROM 4hours to instantaniuos deployement on websphere.
+SUCCESSFULLY COMPLETED ALL PRIORITY WITH FIRST TIME QUALTIY
+
+
+
+
+
+
+
+Q)Which strengths and capabilities are you most focused on developing? How do you plan to continue developing them to succeed in the future?
+
+ANS)
+The strength and capabilities that I am most focused upon is learning the domain of BT&E , understanding the architecture change of FTCS to Daedalus, understanding the role and integration of FTCS and DWR application with whole BT&E, completing the basic IT pathway trainings which will strengthen my IT capabilities. 
+
+
+Along with the domain learning I am also focused on enhancing my skills by taking up multiple courses on Plural-sight. Already completed Spring fundamental in Java, Design pattern in java and working on Spring MVC and Spring boot courses. Along with this learning Python with team so that we will be comfortable working with Daedalus work.
+
+
+
+
+
+
+
+
+
+Q)How have you demonstrated the Seek, Speak & Listen habits in your daily work?
+
+ANS)
+Seek, Speak & Listen habits is by default integrated with the work I do daily.
+
+Seek - When we started learning and working on the DWR application. There were many impedance we faced with respect to re-designing the build-pipeline of the application. I always put forward all the problems we were facing in transition phase and always seek help from counterpart in understanding the whole process.
+
+While setting up WAS server with local code base and creating the profiles for the application to run on local machine. We faced issues on selecting the right eclipse version and many setup related changes.
+
+I seek help from Nawaz (former FTCS infrastructure admin) to resolve all my issues with WAS and profile creation.
+
+
+
+Speak- During every meeting either its related to project or generic meeting . I always speak my mind and never hesitate to speak. Whether its sprint planning, roadmap, retrospect or team building activities meeting I always put forward my points and suggestion.
+
+
+
+Listen - Listening resolves more problems than speaking.
+
+•During our DWR meeting with user or Michelle(Counterpart in US), I always try to listen more than I speak because these SMEs are working on the application from years so listening to them carefully will clear my smallest of the doubts also.
+•Though I am currently not actively working on FTCS application but I always prefer to join the FTCS meeting also to Listen to future roadmaps activities going on in FTCS so that I am always up-to date with the application ongoing.
+
+
+
+
+
+
+
+
+
+
+
+
