@@ -1,0 +1,121 @@
+We all have heared about the statement saying things are working fine in dev environmnet on my laptop but when it goes to production it fails"
+Suppose we have 5 microservices are are hosted in 5 different virtual machines in this case many resources are wasted 
+
+In docker container we don't need to prelocate RAM or resouces.
+
+Docker are lightweight virtualization which uses host OS.
+Why Lightweght.
+In case of virtualization each virtaul machine should be having a guest OS. Problem: Resource hungry and uses lot of resources. Prelocating resources. Wasted of resources.
+
+Docker engine layer above Host OS.
+
+
+Code base out
+
+
+Hi All, today I will be talking about docker and containerization concepts and how we can leverage the docker in our current CI/CD pipeline. We also have done some POC for our usecase for setting up local environment for MIST,OAPI and cecefg application.
+
+Containers are nothing but lightweight virtual machines. 
+So containers are executable software which contains all our package code (.jar war) all dependent libraries and other configuration.
+Once u have container you don't need any software dependenciews to run your application.
+
+
+What we have done is:
+Problem: I have to do local setup for MIST application in DNEW env. I need depend prop files ,tomcat, ant for java need to keep security validation files and need to change database connection properties etc
+Sometime these setup is tedious there will be mismatch in prop files.
+We have created image that has everything that u need to do local setup
+
+
+
+PURPOSING:
+
+
+build will done on the host machine... and copy the build package (war/jar) to the docker images and push it to docker registry 
+And on the deployment,
+pull it from docker registry..
+run the script(which is available inside image) by passing the environment name as run time args 
+so it will pick the prop files from the run time args directory 
+so it says we have one build script for MIST for all env .. We run buildscript and then jar/war copied that in our image. Now during deployment we pull it give env param to deploy script and picks prop file based on runtime env.
+
+
+ADVANTAGE:
+Need to build once
+Trying to remove the dependency of Synergy 
+Our application will behave consistency across all the environments as we are using same image 
+don't need to worry which JAVA, HDF5 version we have in dev and prod etc. 
+
+
+
+https://sres.web.boeing.com/artifactory/webapp/#/artifacts/browse/tree/General/osstools/docker/desktop/Docker%20Desktop%20Installer.exe
+
+To create a container, Docker engine takes an image, adds the top writable layer and initializes various settings (network ports, container name, ID and resource limits).
+
+All write operation inside the container are stored in this writable layer, so when the container is deleted, the writable layer is also deleted while the underlying image remains unchanged.
+docker cp charming_albattani:/usr/local/buildScripts/deployApp.sh  .
+
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\oapi\oapiDeployApp.sh charming_albattani:/usr/local/buildScripts
+
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\oapi\OapiApplication.properties charming_albattani:/usr/local/oapi/configs
+
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\oapi\OapiApplication.properties charming_albattani:/usr/local/oapi/configs
+
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\oapi\jpa-config-tomcat.xml cecfg_27_1:/usr/local/oapi/configs
+
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\cecfg\jpa-config-tomcat.xml upbeat_kepler:/usr/local/cecfg/configs
+
+
+CECFG COPY FROM LOCAL TO CONTAINER
+
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\cecfg\cecfgDeployApp.sh charming_albattani:/usr/local/buildScripts
+
+
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\cecfg\CecfgApplication.properties charming_albattani:/usr/local/cecfg/configs
+
+
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\cecfg\SecurityValidationUtils charming_albattani:/usr/local/cecfg/configs
+
+SecurityValidationUtils
+
+
+docker save -o C:\Users\kh715e\Desktop\Workitems\DOCKER\oapi_cecfg_image.tar oapi_cecfg_image
+
+https://temppass.web.boeing.com/ 
+
+
+docker commit friendly_chaum   cecfg_oapi_image:version2
+
+docker run -it --name cecfg_image_test_1 -p 8082:8080 -v C:\Users\kh715e\Development\NEW_TFS_MIST_WORKSPACE:/usr/cecfg cecfg_oapi_latest1
+
+docker run -it --name oapi_image_test_1 -p 8083:8080 -v C:\Users\kh715e\Development\NEW_TFS_MIST_WORKSPACE:/usr/oapi cecfg_oapi_latest3
+
+docker ps -aq
+docker stop $(docker ps -aq)
+
+	
+       docker run -it --name mistwebapp_container -p 8080:8080 -v C:\Users\kh715e\Development\NEW_TFS_MIST_WORKSPACE:/usr/mist mistwebapp
+
+CECFG MOUNT
+
+docker run -it --name cecfg_final_1 -p 8084:8080 -v C:\Users\kh715e\Development\NEW_TFS_MIST_WORKSPACE:/usr/cecfg cecfg_oapi_lat
+
+docker run -it --name oapi_container -p 8080:8080 -v C:\Users\kh715e\Development\NEW_TFS_MIST_WORKSPACE:/usr/oapi cecfg_oapi_lat
+8083274243
+
+
+
+du to find size of directories
+
+du -sh tomcat
+
+CONTAINER::
+1) Run or create  docker run -it 
+2) 
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,284 @@
+DOCKER
+
+
+Whenever we pull image it get stored into out local_host and if images are not there it will lokk into the hub.
+Wiki--
+
+https://docs.docker.com/v17.09/engine/installation/linux/docker-ce/ubuntu/      (Installation)
+https://www.shellhacks.com/docker-image-vs-container/                           (Images,container and layers)
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html  (Docker on aws)
+https://www.youtube.com/results?search_query=docker+raghav+pal
+https://docs.docker.com/engine/reference/builder/#cmd                           (DockerFile)
+https://github.com/wsargent/docker-cheat-sheet#dockerfile                       (DockerFile)
+
+COMMANDS::
+ 
+ BASICS
+
+ sudo docker version        (Full description)
+ sudo docker -v             (Just the version)
+ sudo docker --help         (To know about other basic images)
+ sudo docker images --help  (What all commands we can use with images)
+ sudo docker login          (To login to dockerhub to your repo)
+ export PS1="\u$ "          (To shorten the start CLI info)
+ docker pull imageName:tag  (Pull the image from hub if tag is not there it will pull the latest)
+ docker info                (information about docker)
+ docker history imageName   (shows dockerfile of image)
+ 
+
+ IMAGES
+ 
+ docker build -t abhi14563200/repo:img_name . [abhi14563200 = dockerhub , repo= repository name on hub, :imag_name = means tag of images,  . means we have all code related to image in the directory]
+ sudo docker images         (To show all images created)
+ sudo docker pull imageName (We can get image name from dockerHub)
+ docker push image abhi14563200/pluralsight_learn:gsK8s2.0  (pushing image to docker)
+ sudo docker rmi imageID    (To remove an image using imageID)
+ sudo docker rmi -f imageName
+ sudo docker images -f "dangling=true" (Display images whose container is running)
+ sudo docker run imageName  (If image is there in local host machine it makes the container if not then pull from repo and then make).
+ sudo docker run --name containerName -it image bash or sh (give name to container and start its interactive mode)
+ sudo docker inspect imageName
+ docker image ls --digest (shows hashes)
+ 
+CONTAINER
+
+ sudo docker ps                    (To show running containers)
+ docker ps -a                      (List all container whether it is running or stop)
+ sudo docker run imageName         (It will create a conatiner for the image if not pull for hub pull it and then create a container)
+ sudo docker run --name containerName -it imageName
+ sudo docker start containerName   (Start container)
+ sudo docker stop containerName    (Stop container)
+ sudo docker pause/unpause containerName
+ sudo docker top containerName     (Shows top process running in container)
+ sudo docker stats containerName
+ sudo docker rm containerName
+ sudo docker exec -it containerName /sh (Go inside that container command line)
+ docker cp charming_albattani:/usr/local/buildScripts/deployApp.sh  .  [container to local]
+ docker rm $(docker ls -aq) -f (To delete all container)
+ ps -elf (to know process inside container)
+
+Docker run –name c1 -it imageName sh
+ 
+docker cp C:\Users\kh715e\Desktop\Workitems\DOCKER\Scripts\oapi\OapiApplication.properties charming_albattani:/usr/local/oapi/configs
+
+
+SECRETS
+
+docker secret create pass-v1 C:\Users\kh715e\Desktop\Work\DOCKER\DOCKER_Document\classified.txt  (pass-v1 is name of secret)
+docker secret ls
+docker secret inspect pass-v1	
+docker service create --name secret-service --secret pass-v1 redis sleep 1d  ( create a service with 1 replica of redis image and assign access to secret)
+
+OTHERS
+
+docker network create -d overlay overnet (creating a network)
+docker service create -d --name ping --network overnet --replicas 3 redis sleep 1d(create a service name ping on a network with 3 replicas of redis app)
+docker volume ls  (list volume)
+docker volume create volumeName (creates a local volume)
+ 
+
+
+ SYSTEM
+
+ sudo docker stats                 (Running container, memory,PIDs etc)
+ sudo docker system df             (Disk usage of images containers etc)
+ sudo docker prune                 (Remove all dangling container and images)
+  
+
+
+
+
+                                                    DockerFile
+Dockerfile contains layers of instruction to create a docker image.
+1st thing is the base image in our java case it will be java 8
+    1)  FROM java:8   (Your base image will be java:8 over that you add your toppings)
+	FROM scratch  (If you want to make image from scratch)
+    2)  MAINTAINER abhisheksingh <email>  (This is a optional line)
+    3)  RUN bash -c 'touch /app.jar'      (RUN any command during docker build)
+
+After building the dockerfile use --> docker build -t imageName .
+                           
+                                                    DOCKERFILE 
+In application.yml
+
+spring:
+  data:
+      mongodb:
+         uri: mongodb://0.0.0.0:27000/test
+Port mapping
+  docker run -d -p 27000:27017 --name mongocontainer mongo  (creating a mongocontainer from mongo image and explosing it to 270000
+Build our app image
+  sudo docker build -t app-image2 .                         (creating a app-image from a dockerfile)
+run app image in a container with a link to mongo container
+   docker run -p 8080:8081 --name app-container --link=mongocontainer2  app-image2 (creating a container of app-image and linking it with mongo and exposing it to 8082)
+
+
+
+                                           
+
+
+
+
+
+abhishek@abhishek-bg1:~/Documents/myGitHubResources$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+[sudo] password for abhishek: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   617    0   617    0     0    247      0 --:--:--  0:00:02 --:--:--   247
+100 10.3M  100 10.3M    0     0  1168k      0  0:00:09  0:00:09 --:--:-- 2302k
+abhishek@abhishek-bg1:~/Documents/myGitHubResources$ sudo chmod +x /usr/local/bin/docker-compose
+abhishek@abhishek-bg1:~/Documents/myGitHubResources$ ls
+angular                    assignment-solution-step3  KeepNote-Step1-Boilerplate  Logging       spring-boot-cloud-native
+angular-workspace          assignment-solution-step4  KeepNote-Step2-Boilerplate  Microservice  spring-microservices-config-settings
+assignment-solution-step1  assignment-solution-step5  KeepNote-Step3-Boilerplate  movie-app
+assignment-solution-step2  CircleCI                   KeepNote-Step4-Boilerplate  Product1
+abhishek@abhishek-bg1:~/Documents/myGitHubResources$ cd spring-boot-cloud-native/
+abhishek@abhishek-bg1:~/Documents/myGitHubResources/spring-boot-cloud-native$ sudo docker-compose up -d
+Building config-server
+Step 1/7 : FROM java:8
+ ---> d23bdf5b1b1b
+Step 2/7 : RUN mkdir /src
+ ---> Running in 79a9b503e03a
+Removing intermediate container 79a9b503e03a
+ ---> 27bfea8ce066
+Step 3/7 : WORKDIR /src
+Removing intermediate container 5d0a0d0a06eb
+ ---> 315a60e3a8bc
+Step 4/7 : ADD target/configuration-service-0.0.1-SNAPSHOT.jar /src/centralizedconfig.jar
+ERROR: Service 'config-server' failed to build: ADD failed: stat /var/lib/docker/tmp/docker-builder873288704/target/configuration-service-0.0.1-SNAPSHOT.jar: no such file or directory
+abhishek@abhishek-bg1:~/Documents/myGitHubResources/spring-boot-cloud-native$ sudo docker-compose up -d
+Building config-server
+Step 1/7 : FROM java:8
+ ---> d23bdf5b1b1b
+Step 2/7 : RUN mkdir /src
+ ---> Using cache
+ ---> 27bfea8ce066
+Step 3/7 : WORKDIR /src
+ ---> Using cache
+ ---> 315a60e3a8bc
+Step 4/7 : ADD target/configuration-service-0.0.1-SNAPSHOT.jar /src/centralizedconfig.jar
+ ---> 4a3034090955
+Step 5/7 : EXPOSE 8891
+ ---> Running in cd643d8aab65
+Removing intermediate container cd643d8aab65
+ ---> 9d4291cf272f
+Step 6/7 : RUN sh -c 'touch /src/centralizedconfig.jar'
+ ---> Running in dec28cfb6676
+Removing intermediate container dec28cfb6676
+ ---> dd2fb0d35359
+Step 7/7 : ENTRYPOINT ["java", "-jar","/src/centralizedconfig.jar"]
+ ---> Running in 438ada7677dc
+Removing intermediate container 438ada7677dc
+ ---> d9dce9734c3a
+Successfully built d9dce9734c3a
+Successfully tagged demo-config-service:latest
+WARNING: Image for service config-server was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Building eureka-server
+Step 1/7 : FROM java:8
+ ---> d23bdf5b1b1b
+Step 2/7 : RUN mkdir /src
+ ---> Using cache
+ ---> 27bfea8ce066
+Step 3/7 : WORKDIR /src
+ ---> Using cache
+ ---> 315a60e3a8bc
+Step 4/7 : ADD target/eureka-server-demo-0.0.1-SNAPSHOT.jar /src/eureka.jar
+ ---> 827a5cd24371
+Step 5/7 : EXPOSE 9090
+ ---> Running in 2bc2530682ec
+Removing intermediate container 2bc2530682ec
+ ---> 3d9f5434f48c
+Step 6/7 : RUN sh -c 'touch /src/eureka.jar'
+ ---> Running in ba59002d6a40
+Removing intermediate container ba59002d6a40
+ ---> 2267abe97b6c
+Step 7/7 : ENTRYPOINT ["java","-jar","/src/eureka.jar"]
+ ---> Running in 9070256586dd
+Removing intermediate container 9070256586dd
+ ---> 5122ba803e9b
+Successfully built 5122ba803e9b
+Successfully tagged demo-eureka-service:latest
+WARNING: Image for service eureka-server was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Building movie-app
+Step 1/5 : FROM java:8
+ ---> d23bdf5b1b1b
+Step 2/5 : VOLUME /tmp
+ ---> Using cache
+ ---> 01fb17f1d0a9
+Step 3/5 : ADD ./target/movie-app-0.0.1-SNAPSHOT.jar app.jar
+ ---> 10bf63937242
+Step 4/5 : EXPOSE 8081
+ ---> Running in 0f7a943380d0
+Removing intermediate container 0f7a943380d0
+ ---> 928f79cd69d8
+Step 5/5 : ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://mongocontainer/test", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ ---> Running in 0ebdc3ae2ec9
+Removing intermediate container 0ebdc3ae2ec9
+ ---> 43968fb222c7
+Successfully built 43968fb222c7
+Successfully tagged demo-movie-app:latest
+WARNING: Image for service movie-app was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Building api-gateway
+Step 1/7 : FROM java:8
+ ---> d23bdf5b1b1b
+Step 2/7 : RUN mkdir /src
+ ---> Using cache
+ ---> 27bfea8ce066
+Step 3/7 : WORKDIR /src
+ ---> Using cache
+ ---> 315a60e3a8bc
+Step 4/7 : ADD target/spring-boot-zuulgatwayproxy-0.0.1-SNAPSHOT.jar /src/apigateway.jar
+ ---> 71041d4ec875
+Step 5/7 : EXPOSE 8092
+ ---> Running in a415fe9512a9
+Removing intermediate container a415fe9512a9
+ ---> 17422d3f0aad
+Step 6/7 : RUN sh -c 'touch /src/apigateway.jar'
+ ---> Running in b7fec4abc90f
+Removing intermediate container b7fec4abc90f
+ ---> 5a0fa33d8668
+Step 7/7 : ENTRYPOINT ["java", "-jar","/src/apigateway.jar"]
+ ---> Running in 92749b9c37d2
+Removing intermediate container 92749b9c37d2
+ ---> f8aa73e5d3eb
+Successfully built f8aa73e5d3eb
+Successfully tagged demo-api-gateway:latest
+WARNING: Image for service api-gateway was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating spring-boot-cloud-native_config-server_1 ... done
+Creating spring-boot-cloud-native_eureka-server_1 ... done
+Creating spring-boot-cloud-native_movie-app_1     ... done
+Creating spring-boot-cloud-native_api-gateway_1   ... done
+abhishek@abhishek-bg1:~/Documents/myGitHubResources/spring-boot-cloud-native$ sudo docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                   PORTS               NAMES
+7c21dbaba8c7        demo-api-gateway      "java -jar /src/apig…"   3 minutes ago       Up 3 minutes (healthy)                       spring-boot-cloud-native_api-gateway_1
+940924a779b7        demo-movie-app        "java -Dspring.data.…"   4 minutes ago       Up 4 minutes (healthy)                       spring-boot-cloud-native_movie-app_1
+16efa1d54014        demo-eureka-service   "java -jar /src/eure…"   4 minutes ago       Up 4 minutes (healthy)                       spring-boot-cloud-native_eureka-server_1
+e8298432a83c        demo-config-service   "java -jar /src/cent…"   5 minutes ago       Up 5 minutes (healthy)                       spring-boot-cloud-native_config-server_1
+abhishek@abhishek-bg1:~/Documents/myGitHubResources/spring-boot-cloud-native$ sudo docker ps -a
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                    PORTS                                                                                   NAMES
+7c21dbaba8c7        demo-api-gateway      "java -jar /src/apig…"   5 minutes ago       Up 4 minutes (healthy)                                                                                            spring-boot-cloud-native_api-gateway_1
+940924a779b7        demo-movie-app        "java -Dspring.data.…"   5 minutes ago       Up 5 minutes (healthy)                                                                                            spring-boot-cloud-native_movie-app_1
+16efa1d54014        demo-eureka-service   "java -jar /src/eure…"   6 minutes ago       Up 6 minutes (healthy)                                                                                            spring-boot-cloud-native_eureka-server_1
+e8298432a83c        demo-config-service   "java -jar /src/cent…"   6 minutes ago       Up 6 minutes (healthy)                                                                                            spring-boot-cloud-native_config-server_1
+914985d9285f        app-image             "java -Dspring.data.…"   6 days ago          Exited (143) 4 days ago                                                                                           app-container
+1203d1c870e9        mongo                 "docker-entrypoint.s…"   6 days ago          Exited (0) 4 days ago                                                                                             mongocontainer
+e61277dcf26e        rabbitmq:management   "docker-entrypoint.s…"   7 days ago          Exited (255) 6 days ago   4369/tcp, 5671-5672/tcp, 25672/tcp, 0.0.0.0:15671->15671/tcp, 0.0.0.0:8090->15672/tcp   musing_almeida
+c8dd6ccc6ffd        rabbitmq:management   "docker-entrypoint.s…"   7 days ago          Exited (2) 7 days ago                                                                                             gracious_yonath
+7643f7531c51        mongo                 "docker-entrypoint.s…"   7 days ago          Exited (255) 6 days ago   0.0.0.0:27017->27017/tcp                                                                determined_elion
+36adc0b04524        mongo                 "docker-entrypoint.s…"   7 days ago          Exited (0) 7 days ago                                                                                             relaxed_lichterman
+b702904e9d88        mongo                 "docker-entrypoint.s…"   7 days ago          Exited (0) 7 days ago                                                                                             sharp_jennings
+e79e1000bceb        mongo                 "docker-entrypoint.s…"   7 days ago          Exited (0) 7 days ago                                                                                             pensive_colden
+7a809f56e7a1        mongo                 "docker-entrypoint.s…"   7 days ago          Created                                                                                                           fervent_northcutt
+5f3fe2b4d638        mongo                 "docker-entrypoint.s…"   7 days ago          Created                                                                                                           cocky_jones
+1d3c0bc76cd7        mongo                 "docker-entrypoint.s…"   7 days ago          Exited (0) 7 days ago                                                                                             jovial_boyd
+abhishek@abhishek-bg1:~/Documents/myGitHubResources/spring-boot-cloud-native$ ^C
+abhishek@abhishek-bg1:~/Documents/myGitHubResources/spring-boot-cloud-native$ sudo docker start mongocontainer
+mongocontainer
+abhishek@abhishek-bg1:~/Documents/myGitHubResources/spring-boot-cloud-native$ sudo docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                   PORTS                      NAMES
+7c21dbaba8c7        demo-api-gateway      "java -jar /src/apig…"   5 minutes ago       Up 5 minutes (healthy)                              spring-boot-cloud-native_api-gateway_1
+940924a779b7        demo-movie-app        "java -Dspring.data.…"   6 minutes ago       Up 6 minutes (healthy)                              spring-boot-cloud-native_movie-app_1
+16efa1d54014        demo-eureka-service   "java -jar /src/eure…"   6 minutes ago       Up 6 minutes (healthy)                              spring-boot-cloud-native_eureka-server_1
+e8298432a83c        demo-config-service   "java -jar /src/cent…"   7 minutes ago       Up 7 minutes (healthy)                              spring-boot-cloud-native_config-server_1
+1203d1c870e9        mongo                 "docker-entrypoint.s…"   6 days ago          Up 4 seconds             0.0.0.0:27000->27017/tcp   mongocontainer
+abhishek@abhishek-bg1:~/Documents/myGitHubResources/spring-boot-cloud-native$ 
