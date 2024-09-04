@@ -1,0 +1,39 @@
+#Enabling H2 Console
+spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:testdb 
+
+
+#Data source
+#spring.datasource.url=jdbc:mysql://localhost:3306/test
+#spring.datasource.username=root
+#spring.datasource.password=root
+ 
+#Hibernate properties
+spring.jpa.hibernate.ddl-auto=create
+#spring.jpa.show-sql=true
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+#spring.jpa.properties.hibernate.formate_sql=true
+
+spring.mail.host=BLV-AV-01.BOEING.COM
+spring.mail.port=25
+
+?	Idea Submit button Alignment
+?	mail Box(DL/GRP) the email template
+?	Review Process(User can edit or Not Submitted Ideas after Admin Review)
+?	Allow Admin to Submit Idea also review his/her own idea ?
+?	History to Review Process? -- Further enhancement
+?	Insite and Mattermost URL's ?
+?	FAQ's ?
+
+
+
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzMDUzNjg0IiwiZXhwIjoxNTkzMTY2OTYyLCJpYXQiOjE1OTMxNTk3NjJ9.AoMOFUtZdeDm1gKkiQxgJz2TVftvG8-AqHxLB8FOOgBtmSPSYE9W-Og8Oq_lOGJn7HVtKK_lIK4VQLiwdIEQfg
+
+
+select * from IDEA_TABLE;
+select * from INNOVATION_IDEA_COMMENTS;
+select * from USER_IDEA;
+select * from USER_PROFILE;
+select * from USER_QUERIES;
+select * from USER_ROLES;
+

@@ -1,0 +1,19 @@
+2021-03-16 14:43:59,236 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-8.1.14.v20131031
+2021-03-16 14:43:59,325 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started SelectChannelConnector@127.0.0.1:51688
+2021-03-16 14:46:08,642 [ModalContext] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 16
+2021-03-16 14:46:12,865 [New I/O client worker #1-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://sres.web.boeing.com/artifactory/Maven-Releases/org/apache/maven/plugins/maven-site-plugin/3.0/maven-site-plugin-3.0.jar
+2021-03-16 14:46:13,908 [New I/O client worker #1-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://sres.web.boeing.com/artifactory/Maven-Releases/org/apache/maven/plugins/maven-site-plugin/3.0/maven-site-plugin-3.0.jar
+2021-03-16 14:46:29,734 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-wtp does not contain lifecycle mapping metadata
+2021-03-16 14:46:29,739 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-egit does not contain lifecycle mapping metadata
+2021-03-16 14:46:29,744 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subversive does not contain lifecycle mapping metadata
+2021-03-16 14:46:29,749 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subclipse does not contain lifecycle mapping metadata
+2021-03-16 14:48:27,505 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.boeing:PSServices:0.0.1 @ C:\Users\kh715e\Desktop\Work\WebDesign\PSINNOVATION_CODE_NEW\PSInnovations_Java\pom.xml.
+2021-03-16 14:48:34,925 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PSInnovations_Java/src/main/java
+2021-03-16 14:48:34,926 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PSInnovations_Java/src/main/resources
+2021-03-16 14:48:34,948 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /PSInnovations_Java/src/main/resources
+2021-03-16 14:48:34,949 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /PSInnovations_Java/src/test/java
+2021-03-16 14:48:35,469 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.boeing:PSServices:0.0.1 @ C:\Users\kh715e\Desktop\Work\WebDesign\PSINNOVATION_CODE_NEW\PSInnovations_Java\pom.xml.
+2021-03-16 14:48:38,899 [Worker-5] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Project import completed 12 sec
+2021-03-16 14:48:40,765 [Worker-13] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2021-03-16 14:48:40,766 [Worker-13] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2021-03-17 11:03:25,428 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - stopped o.e.j.s.ServletContextHandler{/help,null}

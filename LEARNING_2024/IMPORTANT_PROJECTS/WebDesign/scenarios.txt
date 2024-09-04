@@ -1,0 +1,33 @@
+
+
+1) User is saving the data --> idea_id = ""  for the very first time
+2) Submit idea  for the very first time
+3) Submit idea after saving in this case idea_id==?
+4) Saving idea after save / modify idea_id ==?
+
+
+
+TASK TO DO....
+
+1) Save User Profile --> POST API --> Body --> {Bemsid, Email, name, login_Date}.    (Krupa)
+2) Get user Roles --> Get API                                                        (Krupa)
+
+
+3) Save/Modify Idea --> POST API                                                    (Abhishek)
+
+6) Submit Idea -->                                                                   (Remya)
+7) Email/Notification service.                                                    [Niranjan, Sathwik]
+
+4) Get Idea by idea Id  --> GET API 
+5) Get All Ideas(getAllIdeasByBemsId)                                		     (Prashanta)
+	if(BemsID = ADMIN)
+		return all ideas
+	  else(bemsID= NORMAL USER)
+		return only respective ideas
+
+8) How to implement comments on ideas..                                               [Remya , rahul]
+8) /landingPage - to load upcoming events and utils (MM channel and Insite)           (Abhishek, niranjana)
+9) Build and deploy    ( deploy database server/ backend-frontend projects to PCF)    ( Krupa, Sathwik)
+10) WSSO implementation                                                               (Remya)
+11) UI design        
+12) CI/CD for angular project                                                       

@@ -1,0 +1,21 @@
+
+
+  BLOCKERS --
+ 
+  1) Code was in ADO and other dependencies( prop file , certificates lib) were maintained in Application server. Disadvantage was there was no track of version for these dependencies.
+  2) Redundancy - Some files were available in different locations. Overhead in maintaining.
+  3) As the applications are legacy the manual builds were tightly coupled. Small change in any files required complete shutdown of entire application for 4 hours.
+  4) Too much idle time and Waste - Unmodified code being built and deployed. 
+
+
+  RESOLUTION
+  
+  1) Currently everything app code and other dependecies migrated to one place ADO.Eliminated the dependency of application server during build.
+  2) Maintaining and versioning is now easy with GIT support.Redundancy is removed as we are maintaining at one place. Overhead is reduced.
+  3) As build process is automated with the help of ADO build agents which reduced the waste and downtime of the applications.Individual projects CAN be built and delivered
+  4) For any configuration changes(like database credentials, WSSO config changes,prop file etc) now entire application rebuilding is not required just restart is enough. It saves alot of downtime. 
+
+  5) Build once and deploy in any higher environment.
+
+  Future roadmap
+   1) Hosting application in cloud (TAS platform) will help in elimating application server for deployment. Other cloud services we can leverage.

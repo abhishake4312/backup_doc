@@ -1,0 +1,18 @@
+$ docker run -d --name test-mysql -e MYSQL_ROOT_PASSWORD=root -p 3307:3306 mysql
+
+$ mysql --host=localhost --port=3307 -u root -p
+Enter password:
+
+
+$ docker port test-mysql
+3306/tcp -> 0.0.0.0:3307
+
+
+
+host localhost
+port 3307
+.
+
+
+
+

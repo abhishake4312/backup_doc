@@ -1,0 +1,11 @@
+applications:
+- name: psinnovations-api-dev
+  path: target/PSServices-0.0.1.jar 
+  buildpacks:
+  - java_buildpack_offline_latest
+  services:
+  - PSInnovationVenue_MySQL
+  env:
+    SPRING_PROFILES_ACTIVE: dev
+    JPA_CONFIG_SPRING_AUTO_RECONFIGURATION : '{enabled: false}'
+  

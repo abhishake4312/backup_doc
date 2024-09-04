@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+
+##          search-locations: "classpath:/config"
+#         search-locations: "file:///C://Users//kh715e//Desktop//Work//LEARNING_2024//Microservices//UDEMY_COURSE//config"
+        git:
+          uri: "https://github.com/abhishek-singh8/ms_config.git"
+          default-label: main
+          clone-on-start: true
+          force-pull: true
+          timeout: 5
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
+
+encrypt:
+  key: "456882as566s6dd"
+
+server:
+  port: 8071
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

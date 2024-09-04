@@ -1,0 +1,24 @@
+https://www.javatpoint.com/cassandra-tutorial
+Cassandra is a NoSQL database which is distributed and scalable.
+Cassandra is designed to handle huge amount of data across many commodity servers, providing high availability without a single point of failure.
+As it is distributed and Data is placed on different machines with more than one replication factor to attain a high availability without a single point of failure.
+Replication factor --> replication factor means across how many nodes data is being placed. 
+
+
+Load balancing and redunduncy.
+
+
+
+
+
+
+
+distributed consenses (QUORUM)
+
+
+Insertion and retrival is easy
+schema is easily changable
+build for scale horizontal partitioning
+Not build for updates.
+ACID is not gurantted.
+compaction.

@@ -1,0 +1,19 @@
+
+
+TASK TO DO....
+
+1) Save User Profile --> POST API --> Body --> {Bemsid, Email, name, login_Date}.   (Krupa)
+2) Get user Roles --> Get API                                                        (Krupa)
+3) Save/Modify Idea --> POST API                                                    (Abhishek)
+4) Get Idea for particular user  --> GET API                                          ( Abhishek) 
+5) Get All Ideas for Admin                                                           (Prashanta)
+6) Submit Idea -->                                                                   (Remya)
+7) Email/Notification service.                                                    [Niranjan, Sathwik]
+8) How to implement comments on ideas..                                               [Remya , rahul]
+8) /landingPage - to load upcoming events and utils (MM channel and Insite)           (Abhishek, niranjana)
+9) Build and deploy                                                                  ( Krupa, Sathwik)
+10) WSSO implementation                                                               (Remya)
+11) UI design                                                                (Amitabh and Rahul)
+
+
+Assumption --> User roles are hard coded. 

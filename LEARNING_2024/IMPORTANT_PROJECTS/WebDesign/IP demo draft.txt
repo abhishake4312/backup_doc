@@ -1,0 +1,47 @@
+Team, 
+Draft flow/major points: feel free to add further- using a ‘conversation’ approach between Person 1 & 2 (pls name them ?). If you can have a draft video for tomorrow’s demo session it will be great:
+
+Person 1: With all the impetus around innovation and how important it is for Boeing, I am really excited to contribute! I also realize that it is a big recognition to be awarded a Patent or even a Trademark within Boeing, along with the rewards that come alongside. Through the sessions which my management has been organizing in collaboration with IP department, I have a reasonably good understanding about innovation and invention, but I am a bit lost on where to start? How do I know if my idea qualifies for a patent? Who do I reach out to, especially if I want some help or mentoring to develop an idea? How to get in touch with Subject Matter Experts to groom my idea?
+
+Person 2: 
+        Hey Krupa, really appreciate your interest and enthusiasm toward Boeing innovation venue and thanks for bringing up all the doubts and questions which is common across all                   innovators who wants to contribute. Considering all the concerns and challenges that people face
+1.	BIETC PS PLM Capability team has come up with a concerted attempt at providing a multi-pronged approach to help you innovate and improve patentability of your ideas
+2.	There are several elements to it: 
+                                        a website, 
+                                        we do have mattermost and Insite channels which contains info about innovation and are available to BIETC PS PLM Capability Domain employees to help,                                         along with an active core team to mentor. Let me start with the website
+
+3.	Major features of the website: 
+         FEATURES:
+              1) One stop shop to get all information about on going activities. Innovators will get the latest information about the Initiatives that BIETC PS PLM takes.
+              2) Links to Boeing in-house innovation sites which is useful to get all information around, quick links etc.
+              3) Most important it provides a Platform for getting your idea reviewed and mentored from very intial stage till patent level, Experts will help at each steps grooming the                  ideas etc.
+ 
+           Let me go through the website demo,
+           When we launch our website it undergoes the Boeing standard WSSO  authentication mechanism. Authentication here, is the crucial part cause it ensures the confedentiality of your            idea which is in turn really important at initial stage, at this stage u don't want share your ideas with others.
+           
+           Once user is authenticated we see the landing page, this page has various elements to it 
+                  This carousel section will help innovators get informed about all the activites and initiatives that BIETEC PS team is taking.So that u don't miss on any oppurtunity.
+
+                  We will go through remaining sections later but the important feature is how to get idea reviewed,
+
+                  !st Section deals with Title and Abstract of idea                   
+
+                  2nd section .. This is again important info to fill . It will help reviewers to know the domain of your idea and get u connected with the right experts. 
+               
+               Go ahead with normal flows after this.........
+
+
+Person 1: Thanks for sharing this feature- this is amazing! Can I ask you couple of questions about this idea-review feature now?
+
+Person 2: Absolutely!
+
+Person 1: How will the process protect my idea’s confidentiality? Also, can you explain who the reviewer will be?
+
+Person 2: Great questions! 
+1.	The application … <mention the security features> 
+2.	Your submitted idea will be sent to a part of Srini’s LT who will work with IP focal and get you relevant feedback/ SME connect to improve upon your idea. 
+3.	Overall, the app design and the core group managing this process will ensure your idea is protected for you
+
+Person 2: Going ahead with other platforms, you will also have an inSite and mattermost channel <speak about features/benefits of inSite & mattermost that can be leveraged>
+
+

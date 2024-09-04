@@ -1,0 +1,52 @@
+ NOSQL(Not Only SQL)
+History-- Carl Strozzi 1998  name NoSql his File-based database
+Unstructured data files often include text and multimedia content. 
+such as : email messages,word processing doc,xml, image file , video file etc.
+
+What is NoSQl::
+set of features for NoSQL databse:
+1) No-relational Data Model
+2) Runs well on clusters
+3) Mostly open source
+4) Its schema-less
+5) Build for new generation web applications
+Why to use NOSQL::
+Evolution of social media like: facebook, twitter etc which has user-driven content has increased and it thereby increased the volume and type of data that is produced managed , analysed and archieved. In addition new source of data such as sensors,GPS,trackers etc generate huge volume of data on regular basis. 
+
+This huge 
+RDBMS has limitations in speed and scaling when it comes to massive high availability data stores.
+
+RDBMS follows fixed schema and alternation in column requires change in entire db and we have to do that offline. While in NoSQL any new addition is automatic.
+Horizontal scaling means that you scale by adding more machines into your pool of resources whereas Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing machine
+RDBMS has vertical scaling means we need large server to store large volumes of data. Scaling over multiple server is complex and time consuming.
+NoSQL supports horizontal scaling, scaling over multiple server(ex:cloud instances) are easier and cost effective in NoSQL. Many NoSQL like cassandra automatically distributes data across servers
+Categories of NOSql DB:
+1) Column based --    CASSANDRA, HBASE
+2) Graph based  --    Neo4J, ALLEGROGRAPH
+3) Document based  -- CouchDB,MONGODB,COSMOS DB
+4) Key value based database -- AMAZON DYNAMODB, RIAK KV, REDIS
+
+Document Based -- Information is stored as a document. ex: JSON FILE, XML FILE, YAML FILE, MS EXCEL FILE.
+ex: JSONFILE -- { "FirstName" : "Bob",
+                  "Address" : "5 Oak St.",
+                  "Hobby" : "sailing"
+                }
+Places it is used frequently::
+  1) Content Managaement
+  2) Real Time analytics
+  3) Product Management
+
+GRAPH DATABASE
+We store databse in graph oriented format here we have nodes and property stored in graph format.
+
+Places it is used:
+Machine learning( Recommendation engine)
+Fraud Detection
+
+Column based DB
+we store info in column and table
+Cassandra is designed for high performance. It is column base NoSQL DB.
+
+Key value based DB:
+
+ 

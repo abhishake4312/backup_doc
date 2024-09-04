@@ -1,0 +1,49 @@
+
+
+             INFOCENTER UNDERSTANDING
+
+       DSO STATUS                 DSO IMPL STATUS
+      NOT STARTED                 NOT STARTED(OVIOUS)   Team has not submitted the first assessement. not started
+      IN PROGRESS                 NOT STARTED(OVIOUS)   Team has started their first assessment but not completed or submit it
+      COMPLETE                      NOT STARTED         Team has submitted but not started roadmap    //not possible
+      COMPLETE                      IN PROGRESS         TEAM has started roadmap but not completed it   --- this will give us all app count which is complete and reassment not complete
+      complete                       complete
+      
+
+
+                     JENIFFR
+
+  ASSESSMENTS       TARGET -- 40   DATA -- 50
+   
+   Submit(ass)            roadmap
+   COMPLETE                COMPLETE              17
+   COMPLETE                PENDING                1
+   NOT COMPLETE            NOT COMPL(OVIOUS)     38
+
+   REASSESSEMENT
+     Submit                 roadmap              
+    COMPLETED               complete           5
+    complete                 pending           1
+      NOT STARTED                              9
+
+
+                      TATUM
+  Submit(ass)            roadmap
+   COMPLETE                COMPLETE              84
+   COMPLETE                PENDING                5
+   NOT COMPLETE            NOT COMPL(OVIOUS)      5
+
+   REASSESSEMENT
+     Submit                 roadmap              
+    COMPLETED               complete           7
+    complete                 pending           1
+      NOT STARTED                              6
+  
+ 
+   ASSESSMENT                               ROADMAP
+  NOT STARTED   37                        TOTAL - 6 roadmaps not completed
+  INPORGRESS    1
+   TOTAL        38
+
+   REASSESSMENT 
+  NOT STARTED/IN Progress  9    	    TOTAL - 1     

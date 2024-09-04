@@ -1,0 +1,6 @@
+
+1) Change get and delete API should be query not as path variable.       --->   Rahul/Niranjan
+2) Status = 5 (Proposed to ....)                                         ---> Abhishek
+3) Comment VO we need to pass Date as well/Description should be LOB.    ---> Prashant
+5) Email -- Hyperlink redirect                                           ---> Sathwik/Niranjan
+6) Logs and exception handling                                           ---> Krupa

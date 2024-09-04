@@ -1,0 +1,9 @@
+
+
+CHECKLIST
+
+1) ADO code access
+2) Deployment access ATOMS etc  -- deploy PHX and EWD
+3) database information
+4) Website access
+5) API details

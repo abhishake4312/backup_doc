@@ -1,0 +1,36 @@
+
+Technology stacks
+
+1) frontend- angular7 and above, material, flex, symbols and color
+2) database - mongo in docker(if find mongo image in sres) or mongoDB
+3) backend - REST APIs, springboot, 
+4) build and deploy - PCF cloud , maven/gradle
+5) Repository - Gitlab
+6) IDE - Visual Code, Eclipse/STS/Intellij
+7) Softwares - Node, Postman, 
+
+LINKS::
+
+http://design.web.boeing.com/digitalexperience/#/home
+https://tburleson-layouts-demos.firebaseapp.com/#/docs
+https://material.angular.io/components/categories
+https://insite.web.boeing.com/culture/service/boeingUserWebServiceJSON/bemsid?query=3029018
+https://material.io/design
+https://docs.pivotal.io/partners/mongodb/binding.html
+http://innovationhub.web.boeing.com/venues/
+http://cdsg.web.boeing.com/cdsg.html?http%3A//cdsg.web.boeing.com/D6-81780.1.49.html
+
+
+NOTES:
+
+1) Need to check PCF space for DB deployment/initial services to cloud.
+
+TASK ASSIGNMENT::
+
+1) Front End basic design -> All
+2) Back-end --> Springboot basic APIs,pointing to GITLAB
+3) Repo creation --> Abhishek, Rahul
+4) Build and deploy --> Krupaharan , sathwik
+5) Gather detailed Requirements from Abhishek's points.
+6) Loading relevant details for the landing page. --> Krupa,Prashant 
+

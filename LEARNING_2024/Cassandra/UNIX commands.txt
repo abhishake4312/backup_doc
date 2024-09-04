@@ -1,0 +1,1 @@
+du -s * | sort -nr | head -n5  (sort and see size)

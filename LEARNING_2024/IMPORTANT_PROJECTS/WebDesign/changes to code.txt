@@ -1,0 +1,241 @@
+@RequestMapping(value = "/deleteIdeaById/{bemsId}/{ideaId}", method = RequestMethod.DELETE)
+	public ResponseEntity<DeleteIdeaResponse> deleteStudent(@PathVariable long bemsId,@PathVariable int ideaId) {
+		logger.info("delete idea with id "+ ideaId);
+		return new ResponseEntity<DeleteIdeaResponse>(saveSubmitIdeaService.deleteIdeabyId(bemsId,ideaId), HttpStatus.OK);
+	}
+
+
+
+
+
+ public abstract DeleteIdeaResponse deleteIdeabyId(long bemsId,int ideaId);
+
+
+package com.boeing.ps.innovationvenue.service.impl;
+
+
+import com.boeing.ps.innovationvenue.bean.EmailMessage;
+
+import com.boeing.ps.innovationvenue.entity.Idea;
+import com.boeing.ps.innovationvenue.entity.UserProfile;
+import com.boeing.ps.innovationvenue.repository.IdeaRepository;
+import com.boeing.ps.innovationvenue.repository.UserProfileRepository;
+
+import com.boeing.ps.innovationvenue.service.SaveSubmitIdeaService;
+import com.boeing.ps.innovationvenue.valueobjects.*;
+
+import com.boeing.ps.innovationvenue.service.EmailNotificationService;
+
+import freemarker.template.TemplateException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import javax.mail.MessagingException;
+import java.io.IOException;
+import java.util.*;
+
+
+@Service
+public class SaveSubmitIdeaServiceImpl extends SaveSubmitIdeaService {
+
+    private static final Logger logger = LoggerFactory.getLogger(SaveSubmitIdeaServiceImpl.class);
+    @Autowired
+    UserProfileRepository userProfileRepo;
+
+    @Autowired
+    IdeaRepository ideaRepository;
+
+    @Autowired
+    Idea ideaEntity;
+
+    @Autowired
+    private EmailNotificationService emailNotificationService;
+
+
+    public IdeaResponse saveSubmitIdea(IdeaRequest ideaRequest)  {
+
+        Idea ideaEntity = null;
+        IdeaResponse ideaResponse = null;
+
+        boolean isUserExists = userProfileRepo.existsById(ideaRequest.getBemsId());
+        logger.info("User Profile exist " + isUserExists);
+
+        //This piece of code is used when user is saving or directly submitting the data for first time.
+        if(ideaRequest.getIdeaId()==0) {
+            if (isUserExists) {
+
+
+                UserProfile userProfile = userProfileRepo.findByBemsId(ideaRequest.getBemsId());
+                logger.info("User Profile " + userProfile);
+                List<Idea> ideaList = userProfile.getIdeaList();
+                //springframework.bean.Beanutils
+
+                ideaEntity = new Idea(ideaRequest.getIdeaTitle(), ideaRequest.getIdeaBody(),
+                        ideaRequest.getIdeaStatus(), Calendar.getInstance().getTime());
+                if(ideaRequest.getIdeaStatus()==2){
+                    ideaEntity.setSubmittedDate(Calendar.getInstance().getTime());
+                }
+
+                if (ideaList == null) {
+                    ideaList = new ArrayList<Idea>();
+                    ideaList.add(ideaEntity);
+                } else {
+                    ideaList.add(ideaEntity);
+                }
+                userProfile.setIdeaList(ideaList);
+                userProfileRepo.save(userProfile);
+
+                logger.info("Idea id--->" + ideaList.size());
+                int ideaId = ideaList.get(ideaList.size() - 1).getIdeaId();
+                logger.info("Idea id--->" + ideaId);
+                ideaResponse = new IdeaResponse(ideaId, "Idea Saved Successfully");
+   //Idea status becomes 2 when user submits the data
+
+                if(ideaRequest.getIdeaStatus()==2){
+                    sendEmail(userProfile, ideaId);
+
+                    ideaResponse = new IdeaResponse(ideaId, "Idea Submitted Successfully");
+                }
+
+            }
+
+        }
+
+        //This is used for updating the saved record and saving/submitting it again
+       else{
+            ideaEntity = ideaRepository.findByIdeaId(ideaRequest.getIdeaId());
+//            ideaEntity = new Idea(ideaRequest.getIdeaTitle(), ideaRequest.getIdeaDescription(), ideaRequest.getIdeaBody(),
+//                    ideaRequest.getIdeaStatus(), Calendar.getInstance().getTime());
+            if(ideaEntity!=null) {
+                ideaEntity.setIdeaTitle(ideaRequest.getIdeaTitle());
+                ideaEntity.setIdeaBody(ideaRequest.getIdeaBody());
+
+                ideaEntity.setIdeaStatus(ideaRequest.getIdeaStatus());
+                ideaEntity.setModificationDate(Calendar.getInstance().getTime());
+                if(ideaRequest.getIdeaStatus()==2){
+                    ideaEntity.setSubmittedDate(Calendar.getInstance().getTime());
+                }
+                ideaRepository.save(ideaEntity);
+                ideaResponse = new IdeaResponse(ideaRequest.getIdeaId(), "Idea Updated Successfully");
+
+                if(ideaRequest.getIdeaStatus()==2){
+                    sendEmail(userProfileRepo.findByBemsId(ideaRequest.getBemsId()), ideaRequest.getIdeaId());
+
+                    ideaResponse = new IdeaResponse(ideaRequest.getIdeaId(), "Idea Submitted Successfully");
+                }
+            }
+            else{
+                ideaResponse = new IdeaResponse(ideaRequest.getIdeaId(), "Please give valid ideaId");
+            }
+
+        }
+
+        return ideaResponse;
+    }
+
+
+    public AllIdeaResponse getAllIdeaDetails(long bemsId) {
+        UserProfile userProfile = userProfileRepo.findByBemsId(bemsId);
+        AllIdeaResponse allIdeaResponse = null;
+        List<Idea> ideaList = null;
+        if (userProfile != null) {
+ //           if (userProfile.getUserRoles().getRoleId() == 10) {
+                logger.info("User Profile " + userProfile);
+                ideaList = userProfile.getIdeaList();
+                if (!ideaList.isEmpty()) {
+                    allIdeaResponse = new AllIdeaResponse(ideaList, "All idea user save/submitted");
+                } else {
+                    allIdeaResponse = new AllIdeaResponse(ideaList, "User has not has given any idea");
+                }
+  //          } else {
+  //          	ideaList= ideaRepository.getIdeasForAdmin();
+   //         	allIdeaResponse = new AllIdeaResponse(ideaList, "Ideas other than Non-submitted Status");
+    //        }
+        } else {
+            allIdeaResponse = new AllIdeaResponse(ideaList, "User doesn't exits");
+        }
+        return allIdeaResponse;
+    }
+
+    private void sendEmail(UserProfile userProfile, int ideaId)  {
+        Map<String,Object> model = new HashMap<>();
+        EmailMessage emailMessage = new EmailMessage();
+        ArrayList<String> emailAddress = new ArrayList<String>();
+        try {
+            String messageBody= "Idea #"+ ideaId+" submitted by "+userProfile.getUserName();
+            model.put("MessageBody",messageBody);
+            logger.info("inside Submit Idea ------------------>");
+            emailMessage.setFromAddress(userProfile.getEmailAddress());
+            emailMessage.setSubject("New Idea has been added to submission queue by "+userProfile.getUserName());
+            emailAddress.add(userProfile.getEmailAddress());
+            emailMessage.setToAddress(emailAddress);
+            emailNotificationService.sendSimpleMessage(emailMessage,model);
+        } catch (MessagingException |IOException |TemplateException e) {
+            logger.error("Exception happened in sendEmail"+ e.getMessage());
+        } catch ( Exception e) {
+            logger.error("Exception happened in sendEmail"+ e.getMessage());
+        }
+    }
+
+    public IdeaByIdResponse getIdeaDetails(int ideaId) {
+
+        IdeaByIdResponse ideaByIdResponse = new IdeaByIdResponse();
+        ideaEntity = ideaRepository.findByIdeaId(ideaId);
+        if (null!= ideaEntity ) {
+            ideaByIdResponse.setIdea(ideaEntity);
+            ideaByIdResponse.setMessage("Idea retrieved successfully");
+        }
+        else {
+            ideaByIdResponse.setMessage("No Idea Found");
+        }
+        return ideaByIdResponse;
+
+
+    }
+
+    public DeleteIdeaResponse deleteIdeabyId(long bemsId,int ideaId){
+        DeleteIdeaResponse deleteIdeaResponse= new DeleteIdeaResponse();
+        UserProfile userProfile= userProfileRepo.findByBemsId(bemsId);
+        List<Idea> ideaList = null;
+        if (userProfile != null) {
+            //           if (userProfile.getUserRoles().getRoleId() == 10) {
+            logger.info("User Profile " + userProfile);
+            ideaList = userProfile.getIdeaList();
+
+            for(Idea idea :ideaList){
+                if(idea.getIdeaId()==ideaId ) {
+                    if (idea.getIdeaStatus() == 1) {
+                        ideaList.remove(idea);
+                        userProfile.setIdeaList(ideaList);
+                        userProfileRepo.save(userProfile);
+                        ideaRepository.deleteById(ideaId);
+                        deleteIdeaResponse.setIdea(ideaId);
+                        deleteIdeaResponse.setMessage("Idea deleted successfully");
+
+                    } else {
+                        deleteIdeaResponse.setIdea(ideaId);
+                        deleteIdeaResponse.setMessage("Submitted Idea can't be deleted ");
+
+                    }
+                    break;
+                }
+
+            }
+
+          }
+
+
+
+        return deleteIdeaResponse;
+    }
+
+}
+

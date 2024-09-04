@@ -1,0 +1,13 @@
+1) Registration - We don't have scope of registration only WWSO.
+2) Once user logins via WSSO -- request goes back to USER( UserName, email,ORG, bemsID) table:
+   PROFILE( email, IDEA_id, )
+   IDEA ( id, form params, submission status )
+3)As soon as user go and fills his idea and click on save then a backend call to POST API (save/idea/ in body whole JSON will come). The idea_id will get populated in USER_PROFILE table.
+4) Once the user click on submit -- API call POST API (submit/idea ) and email will trigger to vignesh.
+
+5) ADMIN PROFILE should be created separately in which his profile will be populated with all submitted IDEAS. 
+
+
+sh88076385
+
+     

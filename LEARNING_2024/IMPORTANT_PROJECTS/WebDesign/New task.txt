@@ -1,0 +1,10 @@
+1) Email test-dev on clicking hyperlinks
+2) Update status -- User should not have access [ ideaStatus !=1] then update
+3) User roles token should not be present as response easily
+4) Business logic -- Authorization token and bemsid should compared.
+
+Frontend--
+Notification after action
+Admin role hardcoded
+SAvefor later going to my ideas it should be on that page
+Many scrolls are coming
